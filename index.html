@@ -1310,6 +1310,112 @@
 和普通的https下载相同，请根据https头做相应的处理</li>
 </ul>
 
+<h2>
+<a id="9-通讯录事件回调" class="anchor" href="#9-%E9%80%9A%E8%AE%AF%E5%BD%95%E4%BA%8B%E4%BB%B6%E5%9B%9E%E8%B0%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>9， 通讯录事件回调</h2>
+
+<p>开放平台会向回调url推送事件变更，假设您提供的回调URL是:</p>
+
+<pre><code>https://127.0.0.1/demo/receive
+</code></pre>
+
+<p>那么在开放平台服务器每一次访问回调URL的时候 将请求(下面链接中的signature,timestamp,nonce的值只是示例，并不代表真实返回的值):</p>
+
+<pre><code>https://127.0.0.1/demo/receive?signature=111108bb8e6dbce3c9671d6fdb69d15066227608 &amp;timestamp=1783610513&amp;nonce=380320111
+</code></pre>
+
+<pre><code>{"encrypt":"1ojQf0NSvw2WPvW7LijxS8UvISr8pdDP+rXpPbcLGOmIBNbWetRg7IP0vdhVgkVwSoZBJeQwY2zhROsJq/HJ+q6tp1qhl9L1+ccC9ZjKs1wV5bmA9NoAWQiZ+7MpzQVq+j74rJQljdVyBdI/dGOvsnBSCxCVW0ISWX0vn9lYTuuHSoaxwCGylH9xRhYHL9bRDskBc7bO0FseHQQasdfghjkl"
+}
+</code></pre>
+
+<p>其中的encrypt字段是经过加密的消息体，encrypt经过一系列解密步骤后，才能产生下面所说的“POST数据解密后示例”，您可以直接使用开放平台提供的库进行解密的处理。
+除此之外，在接收到推送之后，需要返回字符串success（代表了你收到了推送），返回的数据也需要做加密处理，如果不返回，开放平台服务器将持续推送下去，达到一定阈值后将不再推送。</p>
+
+<p>** 目前可以监听的事件类型分别为: ** </p>
+
+<ul>
+<li>user_add_org : 通讯录用户增加</li>
+<li>user_modify_org : 通讯录用户更改</li>
+<li>user_leave_org : 通讯录用户离职</li>
+<li>org_admin_add ：通讯录用户被设为管理员</li>
+<li>org_admin_remove ：通讯录用户被取消设置管理员</li>
+<li>org_dept_create ： 通讯录企业部门创建</li>
+<li>org_dept_modify ： 通讯录企业部门修改</li>
+<li>org_dept_remove ： 通讯录企业部门删除</li>
+<li>org_remove ： 企业被解散</li>
+</ul>
+
+<p>** 参数说明：** </p>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EventType</td>
+<td>事件类型，有八种，"user_add_org”, “user_modify_org”, “user_leave_org”,“org_admin_add”, “org_admin_remove”, “org_dept_create”, “org_dept_modify”, “org_dept_remove”, “org_remove”</td>
+</tr>
+<tr>
+<td>TimeStamp</td>
+<td>时间戳</td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>随机串</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>签名</td>
+</tr>
+<tr>
+<td>UserId</td>
+<td>用户发生变更的userid列表</td>
+</tr>
+<tr>
+<td>DeptId</td>
+<td>部门发生变更的userid列表</td>
+</tr>
+<tr>
+<td>CorpId</td>
+<td>发生通讯录变更的企业</td>
+</tr>
+</tbody>
+</table>
+
+<p>** 返回说明 **</p>
+
+<p>服务提供商在收到此事件推送后务必返回包含经过加密的字符串"success"的json数据</p>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signature</td>
+<td>消息体签名</td>
+</tr>
+<tr>
+<td>TimeStamp</td>
+<td>时间戳</td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>随机串</td>
+</tr>
+<tr>
+<td>encrypt</td>
+<td>“success"加密字符串</td>
+</tr>
+</tbody>
+</table>
+
 <h1>
 <a id="四----开发demo" class="anchor" href="#%E5%9B%9B----%E5%BC%80%E5%8F%91demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>四，    开发demo</h1>
 
