@@ -41,7 +41,7 @@
 <ul>
 <li>您收集用户的数据后，必须采取必要的保护措施，防止用户数据被盗、泄漏等。</li>
 <li>如果认为您收集、使用用户数据的方式，可能损害用户体验，有权要求您删除相关数据并不得再以该方式收集、使用用户数据。</li>
-<li>一旦您停止使用本服务，或优办基于任何原因终止您使用本服务，您必须立即删除全部因使用本服务而获得的数据（包括各种备份）， 且不得再以任何方式进行使用。</li>
+<li>一旦您停止使用本服务，或基于任何原因终止您使用本服务，您必须立即删除全部因使用本服务而获得的数据（包括各种备份）， 且不得再以任何方式进行使用。</li>
 </ul>
 
 <h2>
@@ -99,7 +99,7 @@
 <td>有</td>
 </tr>
 <tr>
-<td>其他接口待补充</td>
+<td>其他接口完善中</td>
 <td>...</td>
 <td>...</td>
 </tr>
@@ -110,7 +110,7 @@
 <a id="4-开放平台接口调用频率说明" class="anchor" href="#4-%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E9%A2%91%E7%8E%87%E8%AF%B4%E6%98%8E" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4， 开放平台接口调用频率说明</h2>
 
 <ul>
-<li>开放平台的调用接口并不是无限制的。为了防止公众号的程序错误而引发优办服务器负载异常，默认情况下，每个开发者应用调用接口都不能超过一定限制，当超过一定限制时，调用对应接口会收到如下错误返回码</li>
+<li>开放平台的调用接口并不是无限制的。为了防止公众号的程序错误而引发服务器负载异常，默认情况下，每个开发者应用调用接口都不能超过一定限制，当超过一定限制时，调用对应接口会收到如下错误返回码</li>
 </ul>
 
 <pre><code>
@@ -139,6 +139,30 @@
 <td>5000000</td>
 </tr>
 <tr>
+<td>获取部门列表</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>获取部门详情</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>获取部门员工列表</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>获取部门员工详情</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>发送聊天消息</td>
+<td>2000</td>
+</tr>
+<tr>
+<td>发送优小助消息</td>
+<td>2000</td>
+</tr>
+<tr>
 <td>其他接口待补充</td>
 <td>...</td>
 </tr>
@@ -164,7 +188,7 @@
 </tr>
 <tr>
 <td>-1</td>
-<td>优办开放平台系统错误</td>
+<td>开放平台系统错误</td>
 </tr>
 <tr>
 <td>4000</td>
@@ -255,11 +279,11 @@
 <a id="概述" class="anchor" href="#%E6%A6%82%E8%BF%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>概述</h3>
 
 <blockquote>
-<p>接入优办开放平台，开发者需要完成以下3步：</p>
+<p>接入开放平台，开发者需要完成以下3步：</p>
 
 <ul>
 <li>1.1 提交服务器配置
-由于目前开发者后台还在公测中，还未对正式开发者开放，所有需要开发者把以下信息通过以下格式，以邮件（<em><a href="mailto:luohj@shinemo.com">luohj@shinemo.com</a></em>）发送给优办后台超级管理员，暂时由超级管理员负责录入,录入成功后会返回应用的<strong>appId和appSecret</strong> 。</li>
+由于目前开发者后台还在公测中，还未对正式开发者开放，所有需要开发者把以下信息通过以下格式，以邮件（<em><a href="mailto:luohj@shinemo.com">luohj@shinemo.com</a></em>）发送给后台超级管理员，暂时由超级管理员负责录入,录入成功后会返回应用的<strong>appId和appSecret</strong> 。</li>
 </ul>
 </blockquote>
 
@@ -328,7 +352,7 @@
 <td>256字以内</td>
 </tr>
 <tr>
-<td>服务器白名单ip（优办开放平台服务端只允许白名单内的ip访问，逗号分隔）</td>
+<td>服务器白名单ip（开放平台服务端只允许白名单内的ip访问，逗号分隔）</td>
 <td>...</td>
 </tr>
 <tr>
@@ -419,7 +443,7 @@
 
 <ul>
 <li>返回说明：
-正常情况下优办开放平台会返回下述JSON数据包给用户</li>
+正常情况下开放平台会返回下述JSON数据包给用户</li>
 </ul>
 
 <pre><code>
@@ -461,7 +485,7 @@
 </code></pre>
 
 <h2>
-<a id="3-测试号申请暂未开放" class="anchor" href="#3-%E6%B5%8B%E8%AF%95%E5%8F%B7%E7%94%B3%E8%AF%B7%E6%9A%82%E6%9C%AA%E5%BC%80%E6%94%BE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3， 测试号申请（暂未开放）</h2>
+<a id="3-测试号申请" class="anchor" href="#3-%E6%B5%8B%E8%AF%95%E5%8F%B7%E7%94%B3%E8%AF%B7%E6%9A%82%E6%9C%AA%E5%BC%80%E6%94%BE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3， 测试号申请</h2>
 
 <h2>
 <a id="4-接口在线调试暂未开放" class="anchor" href="#4-%E6%8E%A5%E5%8F%A3%E5%9C%A8%E7%BA%BF%E8%B0%83%E8%AF%95%E6%9A%82%E6%9C%AA%E5%BC%80%E6%94%BE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4， 接口在线调试（暂未开放）</h2>
@@ -473,7 +497,7 @@
 <a id="三----获取用户信息" class="anchor" href="#%E4%B8%89----%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>三，    获取用户信息</h1>
 
 <h2>
-<a id="1-获取用户信息优办登录token机制" class="anchor" href="#1-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E4%BC%98%E5%8A%9E%E7%99%BB%E5%BD%95token%E6%9C%BA%E5%88%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1， 获取用户信息（优办登录token机制）</h2>
+<a id="1-获取用户信息登录token机制" class="anchor" href="#1-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E4%BC%98%E5%8A%9E%E7%99%BB%E5%BD%95token%E6%9C%BA%E5%88%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1， 获取用户信息（登录token机制）</h2>
 
 <ul>
 <li>http请求方式: GET</li>
@@ -497,7 +521,7 @@
 <tr>
 <td>token</td>
 <td>是</td>
-<td>优办客户端拼接上的token</td>
+<td>客户端拼接上的token</td>
 </tr>
 <tr>
 <td>accessToken</td>
@@ -509,7 +533,7 @@
 
 <ul>
 <li>返回说明：
-正常情况下优办开放平台会返回下述JSON数据包给用户</li>
+正常情况下开放平台会返回下述JSON数据包给用户</li>
 </ul>
 
 <pre><code>
@@ -595,7 +619,7 @@
 
 <ul>
 <li>返回说明：
-正常情况下优办开放平台会返回下述JSON数据包给用户</li>
+正常情况下开放平台会返回下述JSON数据包给用户</li>
 </ul>
 
 <pre><code>
