@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>开放平台开发者文档</title>
+    <title>优办开放平台开发者文档 by uban360</title>
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
@@ -16,31 +16,14 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1 class="header">开放平台开发者文档</h1>
-        <p class="header">agenda</p>
-        <ul>
-          <li><a class="" href="#">一 开始前必读</a></li>
-          <li><a class="" href="#">二 开始开发</a></li>
-          <li><a class="" href="#">三 服务端开发文档</a>
-              <ul>
-                <li><a class="" href="#">1 获取用户信息（登录token机制）</a></li>
-                <li><a class="" href="#">2 获取用户信息（用户uid机制）</a></li>
-                <li><a class="" href="#">3 获取部门列表</a></li>
-                <li><a class="" href="#">4 获取部门成员列表</a></li>
-                <li><a class="" href="#">5 获取成员详情</a></li>
-                <li><a class="" href="#">6 发送聊天消息</a></li>
-                <li><a class="" href="#">7 上传媒体文件</a></li>
-              </ul>
-          </li>
-          <li><a class="" href="#">四 开发demo</a></li>
-        </ul>
+        <h1 class="header">优办开放平台开发者文档</h1>
+        <p class="header"></p>
+
 
 
         <ul>
-          <li><a class="buttons github" href="https://github.com/jituancaiyun/openapi-demo">GitHub Demo</a></li>
+          <li><a class="buttons github" href="https://github.com/uban360">GitHub Profile</a></li>
         </ul>
-
-
 
       </header>
       <section>
@@ -993,12 +976,30 @@
 
 <ul>
 <li>text消息</li>
-<li>参数说明
-参数 | 是否必须 | 描述
------------- | ------------- | -------------
-msgType | 是 | 消息类型，此时固定为：text
-content | 是 | 消息内容</li>
+<li>参数说明</li>
 </ul>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msgType</td>
+<td>是</td>
+<td>消息类型，此时固定为：text</td>
+</tr>
+<tr>
+<td>content</td>
+<td>是</td>
+<td>消息内容</td>
+</tr>
+</tbody>
+</table>
 
 <pre><code>
 
@@ -1014,12 +1015,30 @@ content | 是 | 消息内容</li>
 
 <ul>
 <li>image消息</li>
-<li>参数说明
-参数 | 是否必须 | 描述
------------- | ------------- | -------------
-msgType | 是 | 消息类型，此时固定为：image
-mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取</li>
+<li>参数说明</li>
 </ul>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msgType</td>
+<td>是</td>
+<td>消息类型，此时固定为：image</td>
+</tr>
+<tr>
+<td>mediaId</td>
+<td>是</td>
+<td>图片媒体文件id，可以调用上传媒体文件接口获取</td>
+</tr>
+</tbody>
+</table>
 
 <pre><code>
 
@@ -1034,12 +1053,30 @@ mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获�
 
 <ul>
 <li>voice消息</li>
-<li>参数说明
-参数 | 是否必须 | 描述
------------- | ------------- | -------------
-msgType | 是 | 消息类型，此时固定为：image
-mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取</li>
+<li>参数说明</li>
 </ul>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msgType</td>
+<td>是</td>
+<td>消息类型，此时固定为：image</td>
+</tr>
+<tr>
+<td>mediaId</td>
+<td>是</td>
+<td>图片媒体文件id，可以调用上传媒体文件接口获取</td>
+</tr>
+</tbody>
+</table>
 
 <pre><code>{
     "msgType": "voice",
@@ -1053,15 +1090,45 @@ mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获�
 
 <ul>
 <li>link消息</li>
-<li>参数说明
-参数 | 是否必须 | 描述
------------- | ------------- | -------------
-msgType | 是 | 消息类型，此时固定为：link
-messageUrl | 是 | 消息点击链接地址
-mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取
-title | 是 | 消息标题
-text | 是 | 消息描述</li>
+<li>参数说明</li>
 </ul>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>msgType</td>
+<td>是</td>
+<td>消息类型，此时固定为：link</td>
+</tr>
+<tr>
+<td>messageUrl</td>
+<td>是</td>
+<td>消息点击链接地址</td>
+</tr>
+<tr>
+<td>mediaId</td>
+<td>是</td>
+<td>图片媒体文件id，可以调用上传媒体文件接口获取</td>
+</tr>
+<tr>
+<td>title</td>
+<td>是</td>
+<td>消息标题</td>
+</tr>
+<tr>
+<td>text</td>
+<td>是</td>
+<td>消息描述</td>
+</tr>
+</tbody>
+</table>
 
 <pre><code>
 {
@@ -1239,12 +1306,12 @@ text | 是 | 消息描述</li>
 <h1>
 <a id="四----开发demo" class="anchor" href="#%E5%9B%9B----%E5%BC%80%E5%8F%91demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>四，    开发demo</h1>
 
-<p><a href="https://github.com/jituancaiyun/openapi-demo">Java Common Github DEMO</a></p>
+<p><a href="http://https://github.com/jituancaiyun/openapi-demo">Java Common Github DEMO</a></p>
 
-<p><a href="https://github.com/jituancaiyun/openapi-demo">Java SDK Github DEMO</a></p>
+<p><a href="http://https://github.com/jituancaiyun/openapi-demo">Java SDK Github DEMO</a></p>
       </section>
       <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">讯盟</a></small></p>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
