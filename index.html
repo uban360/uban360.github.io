@@ -1,34 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <title>优办开放平台开发者文档 by uban360</title>
 
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-
-    <title>优办开放平台开发者文档 by uban360</title>
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>优办开放平台开发者文档</h1>
-        <h2></h2>
-        <a href="https://github.com/uban360" class="button"><small>Follow me on</small> GitHub</a>
-      </div>
-    </header>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">优办开放平台开发者文档</h1>
+        <p class="header"></p>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
+
+
+        <ul>
+          <li><a class="buttons github" href="https://github.com/uban360">GitHub Profile</a></li>
+        </ul>
+
+      </header>
+      <section>
+        <h1>
 <a id="一----开始前必读" class="anchor" href="#%E4%B8%80----%E5%BC%80%E5%A7%8B%E5%89%8D%E5%BF%85%E8%AF%BB" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>一，    开始前必读</h1>
 
 <h2>
@@ -53,7 +52,7 @@
 <ul>
 <li>您收集用户的数据后，必须采取必要的保护措施，防止用户数据被盗、泄漏等。</li>
 <li>如果我们认为您收集、使用用户数据的方式，可能损害用户体验，我们有权要求您删除相关数据并不得再以该方式收集、使用用户数据。</li>
-<li>一旦您停止使用本服务，或优办基于任何原因终止您使用本服务，您必须立即删除全部因使用本服务而获得的数据（包括各种备份）， 且不得再以任何方式进行使用。</li>
+<li>一旦您停止使用本服务，或 基于任何原因终止您使用本服务，您必须立即删除全部因使用本服务而获得的数据（包括各种备份）， 且不得再以任何方式进行使用。</li>
 </ul>
 
 <h2>
@@ -66,7 +65,7 @@
 <tr>
 <th>接口名称</th>
 <th>未认证开放平台账号</th>
-<th>优办认证开放平台账号</th>
+<th>认证开放平台账号</th>
 </tr>
 </thead>
 <tbody>
@@ -112,7 +111,7 @@
 <a id="4-开放平台接口调用频率说明" class="anchor" href="#4-%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E9%A2%91%E7%8E%87%E8%AF%B4%E6%98%8E" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4， 开放平台接口调用频率说明</h2>
 
 <ul>
-<li>开放平台的调用接口并不是无限制的。为了防止公众号的程序错误而引发优办服务器负载异常，默认情况下，每个开发者应用调用接口都不能超过一定限制，当超过一定限制时，调用对应接口会收到如下错误返回码</li>
+<li>开放平台的调用接口并不是无限制的。为了防止公众号的程序错误而引发 服务器负载异常，默认情况下，每个开发者应用调用接口都不能超过一定限制，当超过一定限制时，调用对应接口会收到如下错误返回码</li>
 </ul>
 
 <pre><code>
@@ -277,7 +276,7 @@
 
 <ul>
 <li>1.1 提交服务器配置
-由于目前开发者后台还在公测中，还未对正式开发者开放，所有需要开发者把以下信息通过以下格式，以邮件（<em><a href="mailto:luohj@shinemo.com">luohj@shinemo.com</a></em>）发送给优办后台超级管理员，暂时由超级管理员负责录入,录入成功后会返回应用的<strong>appId和appSecret</strong> 。</li>
+由于目前开发者后台还在公测中，还未对正式开发者开放，所有需要开发者把以下信息通过以下格式，以邮件（<em><a href="mailto:luohj@shinemo.com">luohj@shinemo.com</a></em>）发送给 后台超级管理员，暂时由超级管理员负责录入,录入成功后会返回应用的<strong>appId和appSecret</strong> 。</li>
 </ul>
 </blockquote>
 
@@ -366,7 +365,7 @@
 <td>...</td>
 </tr>
 <tr>
-<td>应用发布到的客户端（优办，集团彩云，联通客户端，全部）</td>
+<td>应用发布到的客户端（ ，集团彩云，联通客户端，全部）</td>
 <td>...</td>
 </tr>
 <tr>
@@ -521,7 +520,7 @@
 <tr>
 <td>token</td>
 <td>是</td>
-<td>优办客户端拼接上的token</td>
+<td>客户端拼接上的token</td>
 </tr>
 <tr>
 <td>accessToken</td>
@@ -973,19 +972,20 @@
 </tbody>
 </table>
 
-<ul>
-<li>msgType(消息类型)及数据格式</li>
-</ul>
+<p>** msgType(消息类型)及数据格式 **</p>
 
-<pre><code>* text消息
-* 参数说明
+<ul>
+<li>text消息</li>
+<li>参数说明
 参数 | 是否必须 | 描述
 ------------ | ------------- | -------------
 msgType | 是 | 消息类型，此时固定为：text
-content | 是 | 消息内容
+content | 是 | 消息内容</li>
+</ul>
 
+<pre><code>
 
-* {
+{
     "msgType": "text",
     "text": {
         "content": "张三的请假申请"
@@ -995,14 +995,18 @@ content | 是 | 消息内容
 
 </code></pre>
 
-<pre><code>* image消息
-* 参数说明
+<ul>
+<li>image消息</li>
+<li>参数说明
 参数 | 是否必须 | 描述
 ------------ | ------------- | -------------
 msgType | 是 | 消息类型，此时固定为：image
-mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取
+mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取</li>
+</ul>
 
-* {
+<pre><code>
+
+{
     "msgType": "image",
     "image": {
         "mediaId": "MEDIA_ID"
@@ -1011,13 +1015,16 @@ mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获�
 
 </code></pre>
 
-<pre><code>* voice消息
-* 参数说明
+<ul>
+<li>voice消息</li>
+<li>参数说明
 参数 | 是否必须 | 描述
 ------------ | ------------- | -------------
 msgType | 是 | 消息类型，此时固定为：image
-mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取
-* {
+mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取</li>
+</ul>
+
+<pre><code>{
     "msgType": "voice",
     "voice": {
        "mediaId": "MEDIA_ID",
@@ -1027,16 +1034,20 @@ mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获�
 
 </code></pre>
 
-<pre><code>* link消息
-* 参数说明
+<ul>
+<li>link消息</li>
+<li>参数说明
 参数 | 是否必须 | 描述
 ------------ | ------------- | -------------
 msgType | 是 | 消息类型，此时固定为：link
 messageUrl | 是 | 消息点击链接地址
 mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取
 title | 是 | 消息标题
-text | 是 | 消息描述
-* {
+text | 是 | 消息描述</li>
+</ul>
+
+<pre><code>
+{
     "msgType": "link",
     "link": {
         "messageUrl": "https://www.baidu.com",
@@ -1214,16 +1225,12 @@ text | 是 | 消息描述
 <p><a href="http://https://github.com/jituancaiyun/openapi-demo">Java Common Github DEMO</a></p>
 
 <p><a href="http://https://github.com/jituancaiyun/openapi-demo">Java SDK Github DEMO</a></p>
-        </section>
-
-        <aside id="sidebar">
-
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
-
-  
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		
   </body>
 </html>
