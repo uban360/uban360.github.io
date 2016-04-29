@@ -1,35 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>开放平台开发者文档</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">开放平台开发者文档</h1>
-        <p class="header"></p>
 
-      </header>
-      <section>
-        <h1>
+    <title>优办开放平台开发者文档 by uban360</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>优办开放平台开发者文档</h1>
+        <h2></h2>
+        <a href="https://github.com/uban360" class="button"><small>Follow me on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
 <a id="一----开始前必读" class="anchor" href="#%E4%B8%80----%E5%BC%80%E5%A7%8B%E5%89%8D%E5%BF%85%E8%AF%BB" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>一，    开始前必读</h1>
+
+<h2>
+<a id="一张图看懂开放平台" class="anchor" href="#%E4%B8%80%E5%BC%A0%E5%9B%BE%E7%9C%8B%E6%87%82%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>一张图看懂开放平台</h2>
+
+<p><img src="http://7xnmmr.com2.z0.glb.qiniucdn.com/openapipink.png" alt="开放平台时序图"></p>
 
 <h2>
 <a id="1-更新日志" class="anchor" href="#1-%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1， 更新日志</h2>
 
 <ul>
 <li>2016年4月15日  开放平台上线，提供获取当前登录用户信息接口，和管理员后台</li>
-<li>2016年4月20日  提供接口权限验证，不同接口享有不同权限</li>
+<li>2016年4月20日 提供接口权限验证，不同接口享有不同权限</li>
 </ul>
 
 <h2>
@@ -40,8 +52,8 @@
 
 <ul>
 <li>您收集用户的数据后，必须采取必要的保护措施，防止用户数据被盗、泄漏等。</li>
-<li>如果认为您收集、使用用户数据的方式，可能损害用户体验，有权要求您删除相关数据并不得再以该方式收集、使用用户数据。</li>
-<li>一旦您停止使用本服务，或基于任何原因终止您使用本服务，您必须立即删除全部因使用本服务而获得的数据（包括各种备份）， 且不得再以任何方式进行使用。</li>
+<li>如果我们认为您收集、使用用户数据的方式，可能损害用户体验，我们有权要求您删除相关数据并不得再以该方式收集、使用用户数据。</li>
+<li>一旦您停止使用本服务，或优办基于任何原因终止您使用本服务，您必须立即删除全部因使用本服务而获得的数据（包括各种备份）， 且不得再以任何方式进行使用。</li>
 </ul>
 
 <h2>
@@ -54,7 +66,7 @@
 <tr>
 <th>接口名称</th>
 <th>未认证开放平台账号</th>
-<th>认证开放平台账号</th>
+<th>优办认证开放平台账号</th>
 </tr>
 </thead>
 <tbody>
@@ -74,11 +86,6 @@
 <td>有</td>
 </tr>
 <tr>
-<td>获取部门详情</td>
-<td>无</td>
-<td>有</td>
-</tr>
-<tr>
 <td>获取部门员工列表</td>
 <td>无</td>
 <td>有</td>
@@ -94,11 +101,6 @@
 <td>有</td>
 </tr>
 <tr>
-<td>发送优小助消息</td>
-<td>无</td>
-<td>有</td>
-</tr>
-<tr>
 <td>其他接口完善中</td>
 <td>...</td>
 <td>...</td>
@@ -110,7 +112,7 @@
 <a id="4-开放平台接口调用频率说明" class="anchor" href="#4-%E5%BC%80%E6%94%BE%E5%B9%B3%E5%8F%B0%E6%8E%A5%E5%8F%A3%E8%B0%83%E7%94%A8%E9%A2%91%E7%8E%87%E8%AF%B4%E6%98%8E" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4， 开放平台接口调用频率说明</h2>
 
 <ul>
-<li>开放平台的调用接口并不是无限制的。为了防止公众号的程序错误而引发服务器负载异常，默认情况下，每个开发者应用调用接口都不能超过一定限制，当超过一定限制时，调用对应接口会收到如下错误返回码</li>
+<li>开放平台的调用接口并不是无限制的。为了防止公众号的程序错误而引发优办服务器负载异常，默认情况下，每个开发者应用调用接口都不能超过一定限制，当超过一定限制时，调用对应接口会收到如下错误返回码</li>
 </ul>
 
 <pre><code>
@@ -136,34 +138,26 @@
 </tr>
 <tr>
 <td>获取用户基本信息</td>
-<td>5000000</td>
+<td>5000</td>
 </tr>
 <tr>
 <td>获取部门列表</td>
-<td>2000</td>
-</tr>
-<tr>
-<td>获取部门详情</td>
-<td>2000</td>
+<td>5000</td>
 </tr>
 <tr>
 <td>获取部门员工列表</td>
-<td>2000</td>
+<td>5000</td>
 </tr>
 <tr>
 <td>获取部门员工详情</td>
-<td>2000</td>
+<td>5000</td>
 </tr>
 <tr>
 <td>发送聊天消息</td>
-<td>2000</td>
+<td>5000</td>
 </tr>
 <tr>
-<td>发送优小助消息</td>
-<td>2000</td>
-</tr>
-<tr>
-<td>其他接口待补充</td>
+<td>其他接口完善中</td>
 <td>...</td>
 </tr>
 </tbody>
@@ -236,7 +230,7 @@
 </tr>
 <tr>
 <td>4011</td>
-<td>需要https请求</td>
+<td>需要httpss请求</td>
 </tr>
 <tr>
 <td>4012</td>
@@ -283,7 +277,7 @@
 
 <ul>
 <li>1.1 提交服务器配置
-由于目前开发者后台还在公测中，还未对正式开发者开放，所有需要开发者把以下信息通过以下格式，以邮件（<em><a href="mailto:luohj@shinemo.com">luohj@shinemo.com</a></em>）发送给后台超级管理员，暂时由超级管理员负责录入,录入成功后会返回应用的<strong>appId和appSecret</strong> 。</li>
+由于目前开发者后台还在公测中，还未对正式开发者开放，所有需要开发者把以下信息通过以下格式，以邮件（<em><a href="mailto:luohj@shinemo.com">luohj@shinemo.com</a></em>）发送给优办后台超级管理员，暂时由超级管理员负责录入,录入成功后会返回应用的<strong>appId和appSecret</strong> 。</li>
 </ul>
 </blockquote>
 
@@ -372,7 +366,7 @@
 <td>...</td>
 </tr>
 <tr>
-<td>应用发布到的客户端（优办，，联通客户端，全部）</td>
+<td>应用发布到的客户端（优办，集团彩云，联通客户端，全部）</td>
 <td>...</td>
 </tr>
 <tr>
@@ -410,10 +404,10 @@
 <p><strong>接口调用请求说明</strong></p>
 
 <ul>
-<li>http请求方式: GET</li>
+<li>https请求方式: GET</li>
 </ul>
 
-<p><code>http://youbanapihost/openapi/token/get?appId=APPID&amp;appSecret=APPSECRET</code></p>
+<p><code>https://api.open.jituancaiyun.com/openapi/token/get?appId=APPID&amp;appSecret=APPSECRET</code></p>
 
 <ul>
 <li>参数说明：</li>
@@ -485,25 +479,31 @@
 </code></pre>
 
 <h2>
-<a id="3-测试号申请" class="anchor" href="#3-%E6%B5%8B%E8%AF%95%E5%8F%B7%E7%94%B3%E8%AF%B7%E6%9A%82%E6%9C%AA%E5%BC%80%E6%94%BE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3， 测试号申请</h2>
+<a id="3-测试号申请" class="anchor" href="#3-%E6%B5%8B%E8%AF%95%E5%8F%B7%E7%94%B3%E8%AF%B7" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3， 测试号申请</h2>
 
-<h2>
-<a id="4-接口在线调试暂未开放" class="anchor" href="#4-%E6%8E%A5%E5%8F%A3%E5%9C%A8%E7%BA%BF%E8%B0%83%E8%AF%95%E6%9A%82%E6%9C%AA%E5%BC%80%E6%94%BE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4， 接口在线调试（暂未开放）</h2>
-
-<h2>
-<a id="5-常见问题" class="anchor" href="#5-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5， 常见问题</h2>
-
-<h1>
-<a id="三----获取用户信息" class="anchor" href="#%E4%B8%89----%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>三，    获取用户信息</h1>
-
-<h2>
-<a id="1-获取用户信息登录token机制" class="anchor" href="#1-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E4%BC%98%E5%8A%9E%E7%99%BB%E5%BD%95token%E6%9C%BA%E5%88%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1， 获取用户信息（登录token机制）</h2>
+<blockquote>
+<p>开放平台为每个开发者账号最多提供10个测试应用账号，测试应用不需要企业认证，默认拥有所有接口权限，访问频率控制与正式应用相同。</p>
+</blockquote>
 
 <ul>
-<li>http请求方式: GET</li>
+<li>3.1 测试号申请暂时通过跟正式应用申请相同方式，邮件给指定人申请，后续会陆续开放后台自助申请。</li>
+<li>3.2 测试号申请完毕后，需要加入该测试号的测试人，加入方式同上。
+## 4， 接口在线调试
+## 5， 常见问题</li>
+<li>5.1 accessToken失效：请检查accessToken全局唯一性，重复获取将导致上一次获取的accessToken失效；</li>
 </ul>
 
-<p><code>http://youbanapihost/openapi/auth/getUserInfoByToken?token=TOKEN&amp;accessToken=ACCESSTOKEN</code></p>
+<h1>
+<a id="三----服务端开发文档" class="anchor" href="#%E4%B8%89----%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>三，    服务端开发文档</h1>
+
+<h2>
+<a id="1-获取用户信息登录token机制" class="anchor" href="#1-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E7%99%BB%E5%BD%95token%E6%9C%BA%E5%88%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1， 获取用户信息（登录token机制）</h2>
+
+<ul>
+<li>https请求方式: GET</li>
+</ul>
+
+<p><code>https://api.open.jituancaiyun.com/openapi/auth/getUserInfoByToken?token=TOKEN&amp;accessToken=ACCESSTOKEN</code></p>
 
 <ul>
 <li>参数说明：</li>
@@ -521,7 +521,7 @@
 <tr>
 <td>token</td>
 <td>是</td>
-<td>客户端拼接上的token</td>
+<td>优办客户端拼接上的token</td>
 </tr>
 <tr>
 <td>accessToken</td>
@@ -586,10 +586,10 @@
 <a id="2-获取用户信息用户uid机制" class="anchor" href="#2-%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E7%94%A8%E6%88%B7uid%E6%9C%BA%E5%88%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2， 获取用户信息（用户uid机制）</h2>
 
 <ul>
-<li>http请求方式: GET</li>
+<li>https请求方式: GET</li>
 </ul>
 
-<p><code>http://youbanapihost/openapi/user/getUserInfoById?uid=UID&amp;accessToken=ACCESSTOKEN</code></p>
+<p><code>https://api.open.jituancaiyun.com/openapi/user/getUserInfoById?uid=UID&amp;accessToken=ACCESSTOKEN</code></p>
 
 <ul>
 <li>参数说明：</li>
@@ -667,12 +667,563 @@
 <pre><code>{"status":4003,"message":"accessToken超时，请重新获取"}
 
 </code></pre>
-      </section>
-      <footer>
-        <p><small>Hosted on <a href="http://uban360.com">杭州讯盟科技有限公司</a> using the Dinky theme</small></p>
-      </footer>
+
+<h2>
+<a id="3-获取部门列表" class="anchor" href="#3-%E8%8E%B7%E5%8F%96%E9%83%A8%E9%97%A8%E5%88%97%E8%A1%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>3， 获取部门列表</h2>
+
+<ul>
+<li>https请求方式: GET</li>
+</ul>
+
+<p><code>https://api.open.jituancaiyun.com/openapi/department/list?accessToken=ACCESSTOKEN</code></p>
+
+<ul>
+<li>参数说明：</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accessToken</td>
+<td>是</td>
+<td>接口访问凭据</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>返回说明：
+正常情况下开放平台会返回下述JSON数据包给用户</li>
+</ul>
+
+<pre><code>
+{"status":0,"data":{"departments":[{"id":1,name:"开发部","parentid":1}, {"id":2,name:"测试部","parentid":1}...]}}
+
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>开放平台处理状态</td>
+</tr>
+<tr>
+<td>data</td>
+<td>处理成功后会把数据字段放到这里</td>
+</tr>
+<tr>
+<td>departments</td>
+<td>部门列表数据</td>
+</tr>
+<tr>
+<td>id</td>
+<td>部门id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>部门名称</td>
+</tr>
+<tr>
+<td>parentid</td>
+<td>父部门id</td>
+</tr>
+</tbody>
+</table>
+
+<p>错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）</p>
+
+<pre><code>{"status":4003,"message":"accessToken超时，请重新获取"}
+
+</code></pre>
+
+<h2>
+<a id="4-获取部门成员列表" class="anchor" href="#4-%E8%8E%B7%E5%8F%96%E9%83%A8%E9%97%A8%E6%88%90%E5%91%98%E5%88%97%E8%A1%A8" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>4， 获取部门成员列表</h2>
+
+<ul>
+<li>https请求方式: GET</li>
+</ul>
+
+<p><code>https://api.open.jituancaiyun.com/openapi/user/list?accessToken=ACCESSTOKEN&amp;deptId=DEPTID&amp;offset=0&amp;size=100</code></p>
+
+<ul>
+<li>参数说明：</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accessToken</td>
+<td>是</td>
+<td>接口访问凭据</td>
+</tr>
+<tr>
+<td>deptId</td>
+<td>是</td>
+<td>部门id</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>是</td>
+<td>页偏移量</td>
+</tr>
+<tr>
+<td>size</td>
+<td>是</td>
+<td>每页的数量</td>
+</tr>
+<tr>
+<td>order</td>
+<td>否</td>
+<td>排序</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>返回说明：
+正常情况下开放平台会返回下述JSON数据包给用户</li>
+</ul>
+
+<pre><code>
+{"status":0,"data":{"hasMore":true, "users":[{"uid":123, "name":"张三"},{"uid":124, "name":"李四"},...]}}
+
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>开放平台处理状态</td>
+</tr>
+<tr>
+<td>data</td>
+<td>处理成功后会把数据字段放到这里</td>
+</tr>
+<tr>
+<td>hasMore</td>
+<td>是否还有更多</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>用户id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>用户名字</td>
+</tr>
+</tbody>
+</table>
+
+<p>错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）</p>
+
+<pre><code>{"status":4003,"message":"accessToken超时，请重新获取"}
+
+</code></pre>
+
+<h2>
+<a id="5-获取成员详情" class="anchor" href="#5-%E8%8E%B7%E5%8F%96%E6%88%90%E5%91%98%E8%AF%A6%E6%83%85" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>5， 获取成员详情</h2>
+
+<ul>
+<li>https请求方式: GET</li>
+</ul>
+
+<p><code>https://api.open.jituancaiyun.com/openapi/user/detail?accessToken=ACCESSTOKEN&amp;uid=UID</code></p>
+
+<ul>
+<li>参数说明：</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accessToken</td>
+<td>是</td>
+<td>接口访问凭据</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>是</td>
+<td>用户id</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>返回说明：
+正常情况下开放平台会返回下述JSON数据包给用户</li>
+</ul>
+
+<pre><code>
+{"status":0,"data":{"avatar":"https://", "name":"张三", "deptId":1}}
+
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>开放平台处理状态</td>
+</tr>
+<tr>
+<td>data</td>
+<td>处理成功后会把数据字段放到这里</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>头像</td>
+</tr>
+<tr>
+<td>deptId</td>
+<td>所属部门id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>用户名字</td>
+</tr>
+</tbody>
+</table>
+
+<p>错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）</p>
+
+<pre><code>{"status":4003,"message":"accessToken超时，请重新获取"}
+
+</code></pre>
+
+<h2>
+<a id="6-发送聊天消息" class="anchor" href="#6-%E5%8F%91%E9%80%81%E8%81%8A%E5%A4%A9%E6%B6%88%E6%81%AF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6， 发送聊天消息</h2>
+
+<ul>
+<li>https请求方式: POST</li>
+</ul>
+
+<p><code>https://api.open.jituancaiyun.com/openapi/message/chat/push</code></p>
+
+<ul>
+<li>参数说明：</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accessToken</td>
+<td>是</td>
+<td>接口访问凭据</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>是</td>
+<td>发送者id</td>
+</tr>
+<tr>
+<td>targetId</td>
+<td>是</td>
+<td>接受者id</td>
+</tr>
+<tr>
+<td>msgType</td>
+<td>是</td>
+<td>消息类型</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>msgType(消息类型)及数据格式</li>
+</ul>
+
+<pre><code>* text消息
+* 参数说明
+参数 | 是否必须 | 描述
+------------ | ------------- | -------------
+msgType | 是 | 消息类型，此时固定为：text
+content | 是 | 消息内容
+
+
+* {
+    "msgType": "text",
+    "text": {
+        "content": "张三的请假申请"
+    }
+  }
+
+
+</code></pre>
+
+<pre><code>* image消息
+* 参数说明
+参数 | 是否必须 | 描述
+------------ | ------------- | -------------
+msgType | 是 | 消息类型，此时固定为：image
+mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取
+
+* {
+    "msgType": "image",
+    "image": {
+        "mediaId": "MEDIA_ID"
+    }
+}
+
+</code></pre>
+
+<pre><code>* voice消息
+* 参数说明
+参数 | 是否必须 | 描述
+------------ | ------------- | -------------
+msgType | 是 | 消息类型，此时固定为：image
+mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取
+* {
+    "msgType": "voice",
+    "voice": {
+       "mediaId": "MEDIA_ID",
+       "duration": "10"
+    }
+}
+
+</code></pre>
+
+<pre><code>* link消息
+* 参数说明
+参数 | 是否必须 | 描述
+------------ | ------------- | -------------
+msgType | 是 | 消息类型，此时固定为：link
+messageUrl | 是 | 消息点击链接地址
+mediaId | 是 | 图片媒体文件id，可以调用上传媒体文件接口获取
+title | 是 | 消息标题
+text | 是 | 消息描述
+* {
+    "msgType": "link",
+    "link": {
+        "messageUrl": "https://www.baidu.com",
+        "mediaId":"@lALOACZwe2Rk",
+        "title": "测试",
+        "text": "测试"
+    }
+}
+
+</code></pre>
+
+<ul>
+<li>返回说明：
+正常情况下开放平台会返回下述JSON数据包给用户</li>
+</ul>
+
+<pre><code>
+{"status":0,"success":true}
+
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>开放平台处理状态</td>
+</tr>
+</tbody>
+</table>
+
+<p>错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）</p>
+
+<pre><code>{"status":4003,"message":"accessToken超时，请重新获取"}
+
+</code></pre>
+
+<h2>
+<a id="7-上传媒体文件" class="anchor" href="#7-%E4%B8%8A%E4%BC%A0%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>7， 上传媒体文件</h2>
+
+<ul>
+<li>https请求方式: POST</li>
+</ul>
+
+<p><code>https://api.open.jituancaiyun.com/openapi/media/upload</code></p>
+
+<ul>
+<li>参数说明：</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accessToken</td>
+<td>是</td>
+<td>接口访问凭据</td>
+</tr>
+<tr>
+<td>type</td>
+<td>是</td>
+<td>用户id</td>
+</tr>
+<tr>
+<td>media</td>
+<td>是</td>
+<td>form-data中媒体文件标识，有filename、filelength、content-type等信息</td>
+</tr>
+</tbody>
+</table>
+
+<p>** 上传的媒体文件限制 **</p>
+
+<p><code>图片（image）:1MB，支持JPG格式</code></p>
+
+<p><code>语音（voice）：2MB，播放长度不超过60s，AMR格式</code></p>
+
+<ul>
+<li>返回说明：
+正常情况下开放平台会返回下述JSON数据包给用户</li>
+</ul>
+
+<pre><code>
+{"status":0,"data":{"type":"image", "mediaId":"dsa8d87y7c8d8c"}}
+
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>status</td>
+<td>开放平台处理状态</td>
+</tr>
+<tr>
+<td>data</td>
+<td>处理成功后会把数据字段放到这里</td>
+</tr>
+<tr>
+<td>type</td>
+<td>媒体文件类型，分别有图片（image）、语音（voice）等</td>
+</tr>
+<tr>
+<td>mediaId</td>
+<td>媒体文件上传后获取的唯一标识</td>
+</tr>
+</tbody>
+</table>
+
+<p>错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）</p>
+
+<pre><code>{"status":4003,"message":"accessToken超时，请重新获取"}
+
+</code></pre>
+
+<h2>
+<a id="8-获取媒体文件" class="anchor" href="#8-%E8%8E%B7%E5%8F%96%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>8， 获取媒体文件</h2>
+
+<ul>
+<li>https请求方式: GET</li>
+</ul>
+
+<p><code>https://api.open.jituancaiyun.com/openapi/media/get?accessToken=ACCESSTOKEN&amp;mediaId=MEDIAID</code></p>
+
+<ul>
+<li>参数说明：</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必须</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>accessToken</td>
+<td>是</td>
+<td>接口访问凭据</td>
+</tr>
+<tr>
+<td>mediaId</td>
+<td>是</td>
+<td>媒体文件的唯一标示</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>返回说明：
+和普通的https下载相同，请根据https头做相应的处理</li>
+</ul>
+
+<h1>
+<a id="四----开发demo" class="anchor" href="#%E5%9B%9B----%E5%BC%80%E5%8F%91demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>四，    开发demo</h1>
+
+<p><a href="http://https://github.com/jituancaiyun/openapi-demo">Java Common Github DEMO</a></p>
+
+<p><a href="http://https://github.com/jituancaiyun/openapi-demo">Java SDK Github DEMO</a></p>
+        </section>
+
+        <aside id="sidebar">
+
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		
+
+  
   </body>
 </html>
