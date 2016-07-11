@@ -1064,8 +1064,8 @@
 <pre><code>{"status":0,"data":{
 "hasMore":true, 
 "users":
-[{"uid":123, "name":"张三", "mobile":"18268080277"},
-{"uid":124, "name":"李四", "mobile":"18268080277"},
+[{"uid":123, "name":"张三", "mobile":"18268080277", "position":"我的职位"},
+{"uid":124, "name":"李四", "mobile":"18268080277", "position":"我的职位"},
 ...]}}
 
 </code></pre>
@@ -1102,6 +1102,10 @@
 <td>mobile</td>
 <td>手机号</td>
 </tr>
+<tr>
+<td>position</td>
+<td>职位</td>
+</tr>
 </tbody>
 </table>
 
@@ -1130,12 +1134,14 @@
     "deptId": ["1", "2"],
     "uid":"",
     "mobile":"18806886888",
+    "position":"销售主管",
     "name":"旻浩"
 },
 {
     "deptId": ["0", "5"],
     "uid":"12",
     "mobile":"18806886887",
+    "position":"销售小弟",
     "name":"旻浩1"
 },
 ...
@@ -1178,7 +1184,12 @@
 <tr>
 <td>uid</td>
 <td>是</td>
-<td>为空则新增，非空则更新</td>
+<td>用户唯一id，为空则新增，非空则更新</td>
+</tr>
+<tr>
+<td>position</td>
+<td>是</td>
+<td>人员职务(长度限制为1~64个字符)</td>
 </tr>
 </tbody>
 </table>
