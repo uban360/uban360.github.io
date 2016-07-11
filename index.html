@@ -1116,7 +1116,7 @@
 </code></pre>
 
 <h3>
-<a id="26-导入部门成员全量接口或者更新" class="anchor" href="#26-%E5%AF%BC%E5%85%A5%E9%83%A8%E9%97%A8%E6%88%90%E5%91%98%E5%85%A8%E9%87%8F%E6%8E%A5%E5%8F%A3%E6%88%96%E8%80%85%E6%9B%B4%E6%96%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.6 导入部门成员(全量接口)（或者更新）</h3>
+<a id="26-导入部门成员全量接口或者更新" class="anchor" href="#26-%E5%AF%BC%E5%85%A5%E9%83%A8%E9%97%A8%E6%88%90%E5%91%98%E5%85%A8%E9%87%8F%E6%8E%A5%E5%8F%A3%E6%88%96%E8%80%85%E6%9B%B4%E6%96%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.6 导入部门成员(增量）</h3>
 
 <ul>
 <li>https请求方式: POST</li>
@@ -1124,6 +1124,14 @@
 
 <pre><code> https://api.open.jituancaiyun.com/openapi/user/import?accessToken=ACCESSTOKEN
 </code></pre>
+
+<ul>
+<li>增量更新接口。
+  eg:(1) 如果之前存在用户A, B; 现通过此接口导入用户B, C; 那么导入后A(不变), B(更新), C(新增)
+     (2) 如果之前存在用户A, B; 现通过此接口导入用户C; 那么导入后A(不变), B(不变), C(新增)
+     (3) 如果之前不存在用户; 现通过此接口导入用户A, B, C; 那么导入后A(新增), B(新增), C(新增)
+</li>
+</ul>
 
 <ul>
 <li>POST消息体</li>
@@ -1200,7 +1208,7 @@
 </ul>
 
 <pre><code>
-{"status":0,"data":{"id":"230332"}}
+{"status":0}
 
 </code></pre>
 
