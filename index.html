@@ -1750,7 +1750,7 @@ https://api.open.jituancaiyun.com/openapi/media/upload
 </ul>
 <h3>步骤四：通过data注入权限验证配置</h3>
 <pre><code>
-var data = '{""appId":"应用appId", "timestamp":"生成签名的时间戳", "nonceStr":"生成签名的随机串", "signature":"签名",...}'; 
+var data = '{""appId":"应用appId", "timestamp":"生成签名的时间戳", "nonceStr":"生成签名的随机串", "signature":"签名(签名算法见下文)",...}'; 
 window.JSBridge.requestHybrid({
                 method: "方法名称",
                 data: JSON.parse(data),
@@ -1759,6 +1759,8 @@ window.JSBridge.requestHybrid({
                 }
 });
 </pre></code>
+
+<p><a href="signature.html">JSSDK 签名算法</a></p>
 
 <table>
 <thead>
