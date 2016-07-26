@@ -1736,7 +1736,70 @@ https://api.open.jituancaiyun.com/openapi/media/upload
 
 <h1>
 <a id="五----JSSDK" class="anchor" href="#%E5%9B%9B----%E5%BC%80%E5%8F%91demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>五，    JSSDK</h1>
-<p><a href="jssdk.html">JSSDK DEMO</a></p>
+<p><a href="https://github.com/jituancaiyun/openapi-demo">JSSDK DEMO</a></p>
+<blockquote>
+<p>开发者通过jssdk调用应用native的相关方法；</p>
+</blockquote>
+
+<h2>JSSDK使用步骤</h2>
+<h3>步骤一：应用中添加测试DEMO APP（群里联系管理员，或者将http://video.statics.cdn.imasheng.com/Hybrid/selectPic.html在app中打开）</h3>
+<h3>步骤二：绑定域名（群里联系管理员，添加js安全域名）</h3>
+<h3>步骤三：引入JS文件</h3>
+<ul>
+<li>在需要调用JS接口的页面引入如下JS文件，（支持https）：<a href="http://video.statics.cdn.imasheng.com/Hybrid/src/bridge.js">http://video.statics.cdn.imasheng.com/Hybrid/src/bridge.js</a></li>
+</ul>
+<h3>步骤四：通过data注入权限验证配置</h3>
+<pre><code>
+var data = '{""appId":"应用appId", "timestamp":"生成签名的时间戳", "nonceStr":"生成签名的随机串", "signature":"签名",...}'; 
+window.JSBridge.requestHybrid({
+                method: "方法名称",
+                data: JSON.parse(data),
+                callback: function(data) {
+                        conosle.log(JSON.stringify(data));
+                }
+});
+</pre></code>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>method</td>
+<td>要调用的方法名称</td>
+</tr>
+<tr>
+<td>data</td>
+<td>JSON格式, 方法所需参数</td>
+</tr>
+<tr>
+<td>callback</td>
+<td>处理回调, JSON格式{ "status":"200", "data":"..."} (status == 200表示回调成功)</td>
+</tr>
+</tbody>
+</table>
+
+<h2>基础接口</h2>
+<h3>1 上传图片</h3>
+<pre><code>
+var data = '{"max":3, "appId":"应用appId", "timestamp":"生成签名的时间戳", "nonceStr":"生成签名的随机串", "signature":"签名"}'; 
+window.JSBridge.requestHybrid({
+                method: "selectpic",
+                data: JSON.parse(data),
+                callback: function(data) {
+                        conosle.log(JSON.stringify(data));
+                }
+});
+</pre></code>
+
+<ul>
+<li>返回说明：
+正常情况下处理成功会返回图片的BASE64编码放到data中</li>
+</ul>
       </section>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
