@@ -45,6 +45,7 @@
                   <li><a href="#3-发送聊天消息">3， 发送聊天消息</a></li>
                   <li><a href="#4-媒体文件管理">4， 媒体文件管理</a></li>
                   <li><a href="#5-通讯录事件回调">5， 通讯录事件回调</a></li>
+                  <li><a href="#6-消息通知">6， 消息通知</a></li>
               </ul>
             </li>
           <li><a href="#四----开发demo">四， 开发demo</a></li>
@@ -151,6 +152,11 @@
 <td>有</td>
 </tr>
 <tr>
+<td>消息通知</td>
+<td>无</td>
+<td>无（需要请联系彩云客服）</td>
+</tr>
+<tr>
 <td>其他接口完善中</td>
 <td>...</td>
 <td>...</td>
@@ -225,6 +231,10 @@
 <tr>
 <td>获取媒体文件</td>
 <td>5000</td>
+</tr>
+<tr>
+<td>消息通知（每秒最多调用500次）</td>
+<td>100000</td>
 </tr>
 <tr>
 <td>其他接口完善中</td>
@@ -1726,6 +1736,212 @@ https://api.open.jituancaiyun.com/openapi/media/upload
 </tr>
 </tbody>
 </table>
+
+
+<h2>
+<a id="6-消息通知" class="anchor" href="#6-%E9%80%9A%E8%AE%AF%E5%BD%95%E4%BA%8B%E4%BB%B6%E5%9B%9E%E8%B0%83" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6， 消息通知</h2>
+
+<p>该接口提供了彩云的消息通道，允许第三方应用发送自定义消息</p>
+
+<ul>
+<li>https请求方式: POST</li>
+</ul>
+
+<pre><code>https://api.open.jituancaiyun.com/openapi/message/common/send
+</code></pre>
+
+<table>
+<thead>
+<tr>
+<th>消息类型</th>
+<th>描述</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>简单Link消息</td>
+<td>带有消息头，消息描述和跳转链接</td>
+<td>msg_link</td>
+</tr>
+<tr>
+<td>图文消息</td>
+<td>富文本消息（可在允许范围自定义）(敬请期待)</td>
+<td>msg_box</td>
+</tr>
+<tr>
+<td>文本消息</td>
+<td>简单文本</td>
+<td>msg_box</td>
+</tr>
+<tr>
+<td>图片消息</td>
+<td>简单图片消息(不能自定义)(敬请期待)</td>
+<td>msg_pic</td>
+</tr>
+<tr>
+<td>语音消息</td>
+<td>简单语音消息(不能自定义)(敬请期待)</td>
+<td>msg_voice</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>接口返回DEMO</li>
+</ul>
+
+<pre>
+  <code>
+    {
+    "status":"0(开放平台处理成功)",
+    "success":"false(只要有一个失败，我就是false)",
+    "invaliduser": "我是发送失败的uid，多个使用半角|分开",
+    "invaliddept": "我是发送失败的部门id，多个使用半角|分开",
+    "message": "我是失败原因"
+    }
+  </code>
+</pre>
+
+<h3>
+<a id="61-简单Link消息" class="anchor" href="#61-%E4%B8%8A%E4%BC%A0%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.1 简单Link消息</h3>
+<ul>
+<li>请求DEMO</li>
+</ul>
+
+<pre>
+  <code>
+    {
+    "touser":"我是消息接收者的uid",
+    "todept":"我是接受者部门id",
+    "msgtype": "msg_link",
+    "link": {
+        "targetUrl": "我是消息中点击跳转的地址（eg:https://www.taobao.com)",
+        "title":"我是消息header(长度20个字符，超过20个字符被隐藏)",
+        "desc":"我是消息body(长度50个字符，超过50个字符被隐藏,支持换行符)",
+       }
+    }
+  </code>
+</pre>
+
+<ul>
+<li>参数说明</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>描述</th>
+<th>是否必须</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>touser</td>
+<td>接收消息的人员列表(多个使用半角|分开)(与todept职能存在一个)</td>
+<td>是</td>
+</tr>
+<tr>
+<td>todept</td>
+<td>接收消息的部门列表(多个使用半角|分开)(与touser职能存在一个)</td>
+<td>是</td>
+</tr>
+<tr>
+<td>msgtype</td>
+<td>消息类型，link消息固定为msg_link</td>
+<td>是</td>
+</tr>
+<tr>
+<td>targetUrl</td>
+<td>点击跳转的地址</td>
+<td>是</td>
+</tr>
+<tr>
+<td>title</td>
+<td>消息标题</td>
+<td>是</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>消息描述</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+
+<h3><a id="62-图文消息" class="anchor" href="#61-%E4%B8%8A%E4%BC%A0%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.2 图文消息(敬请期待)</h3>
+
+<h3><a id="63-文本消息" class="anchor" href="#61-%E4%B8%8A%E4%BC%A0%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.3 文本消息</h3>
+
+<ul>
+<li>请求DEMO</li>
+</ul>
+
+<pre>
+  <code>
+    {
+    "touser":"我是消息接收者的uid",
+    "todept":"我是接受者部门id",
+    "msgtype": "msg_text",
+    "text": {
+        "title":"我是消息header(长度20个字符，超过20个字符被隐藏)",
+        "desc":"我是消息body(长度50个字符，超过50个字符被隐藏,支持换行符)",
+       }
+    }
+  </code>
+</pre>
+
+<ul>
+<li>参数说明</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>描述</th>
+<th>是否必须</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>touser</td>
+<td>接收消息的人员列表(多个使用半角|分开)(与todept职能存在一个)</td>
+<td>是</td>
+</tr>
+<tr>
+<td>todept</td>
+<td>接收消息的部门列表(多个使用半角|分开)(与touser职能存在一个)</td>
+<td>是</td>
+</tr>
+<tr>
+<td>msgtype</td>
+<td>消息类型，link消息固定为msg_text</td>
+<td>是</td>
+</tr>
+<tr>
+<td>title</td>
+<td>消息标题</td>
+<td>是</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>消息描述</td>
+<td>是</td>
+</tr>
+</tbody>
+</table>
+
+<h3><a id="64-图片消息" class="anchor" href="#61-%E4%B8%8A%E4%BC%A0%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.4 图片消息(敬请期待)</h3>
+
+<h3><a id="65-语音消息" class="anchor" href="#61-%E4%B8%8A%E4%BC%A0%E5%AA%92%E4%BD%93%E6%96%87%E4%BB%B6" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>6.5 语音消息(敬请期待)</h3>
+
+
+
+
+
+
 
 <h1>
 <a id="四----开发demo" class="anchor" href="#%E5%9B%9B----%E5%BC%80%E5%8F%91demo" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>四，    开发demo</h1>
