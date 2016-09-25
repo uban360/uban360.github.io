@@ -784,7 +784,7 @@
 <li>POST消息体</li>
 </ul>
 
-<pre><code>{"name":"芒果医生", "parentId":"0", "order":"1"}
+<pre><code>{"name":"芒果医生", "parentid":"0"}
 </code></pre>
 
 <ul>
@@ -814,11 +814,6 @@
 <td>parentId</td>
 <td>是</td>
 <td>父部门id(根部门为0)</td>
-</tr>
-<tr>
-<td>order</td>
-<td>是</td>
-<td>在父部门中的次序值。order值小的排序靠前</td>
 </tr>
 </tbody>
 </table>
@@ -876,7 +871,7 @@
 <li>POST消息体</li>
 </ul>
 
-<pre><code>{"name":"芒果医生", "parentId":"0", "order":"1", "id":"23004"}
+<pre><code>{"name":"芒果医生", "parentid":"0", "id":"23004", "oldParentid":"0"}
 </code></pre>
 
 <ul>
@@ -903,14 +898,14 @@
 <td>部门名称(长度限制为1~64个字符)</td>
 </tr>
 <tr>
-<td>parentId</td>
-<td>否</td>
+<td>parentid</td>
+<td>是</td>
 <td>父部门id(根部门为0)</td>
 </tr>
 <tr>
-<td>order</td>
-<td>否</td>
-<td>在父部门中的次序值。order值小的排序靠前</td>
+<td>oldParentid</td>
+<td>是</td>
+<td>原来的部门id</td>
 </tr>
 <tr>
 <td>id</td>
@@ -1131,123 +1126,6 @@
 
 </code></pre>
 
-<h3>
-<a id="26-导入部门成员全量接口或者更新" class="anchor" href="#26-%E5%AF%BC%E5%85%A5%E9%83%A8%E9%97%A8%E6%88%90%E5%91%98%E5%85%A8%E9%87%8F%E6%8E%A5%E5%8F%A3%E6%88%96%E8%80%85%E6%9B%B4%E6%96%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.6 导入部门成员(增量）</h3>
-
-<ul>
-<li>https请求方式: POST</li>
-</ul>
-
-<pre><code> https://api.open.jituancaiyun.com/openapi/user/import?accessToken=ACCESSTOKEN
-</code></pre>
-
-<ul>
-<li>增量更新接口。eg:
-  <li>(1) 如果之前存在用户A, B; 现通过此接口导入用户B, C; 那么导入后A(不变), B(更新), C(新增)</li>
-  <li>(2) 如果之前存在用户A, B; 现通过此接口导入用户C; 那么导入后A(不变), B(不变), C(新增)</li>
-  <li>(3) 如果之前不存在用户; 现通过此接口导入用户A, B, C; 那么导入后A(新增), B(新增), C(新增)</li>
-</li>
-</ul>
-
-<ul>
-<li>POST消息体</li>
-</ul>
-
-<pre><code>[
-{
-    "deptId": ["1", "2"],
-    "uid":"",
-    "mobile":"18806886888",
-    "title":"销售主管",
-    "name":"旻浩"
-},
-{
-    "deptId": ["0", "5"],
-    "uid":"12",
-    "mobile":"18806886887",
-    "title":"销售小弟",
-    "name":"旻浩1"
-},
-...
-]
-</code></pre>
-
-<ul>
-<li>参数说明：</li>
-</ul>
-
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>是否必须</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>accessToken</td>
-<td>是</td>
-<td>接口访问凭据</td>
-</tr>
-<tr>
-<td>name</td>
-<td>是</td>
-<td>成员名字(长度限制为1~64个字符)</td>
-</tr>
-<tr>
-<td>deptId</td>
-<td>是</td>
-<td>数组类型，数组里面值为字符串，成员所属部门id列表</td>
-</tr>
-<tr>
-<td>mobile</td>
-<td>是</td>
-<td>手机号码。企业内必须唯一</td>
-</tr>
-<tr>
-<td>uid</td>
-<td>是</td>
-<td>用户唯一id，为空则新增，非空则更新</td>
-</tr>
-<tr>
-<td>title</td>
-<td>是</td>
-<td>人员职务(长度限制为1~64个字符)</td>
-</tr>
-</tbody>
-</table>
-
-<ul>
-<li>返回说明：
-正常情况下开放平台会返回下述JSON数据包给用户</li>
-</ul>
-
-<pre><code>
-{"status":0}
-
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>status</td>
-<td>开放平台处理状态</td>
-</tr>
-</tbody>
-</table>
-
-<p>错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）</p>
-
-<pre><code>{"status":4003,"message":"accessToken超时，请重新获取"}
-
-</code></pre>
 
 <h3>
 <a id="27-新增人员" class="anchor" href="#26-%E5%AF%BC%E5%85%A5%E9%83%A8%E9%97%A8%E6%88%90%E5%91%98%E5%85%A8%E9%87%8F%E6%8E%A5%E5%8F%A3%E6%88%96%E8%80%85%E6%9B%B4%E6%96%B0" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2.7 新增人员</h3>
@@ -1256,7 +1134,7 @@
 <li>https请求方式: POST</li>
 </ul>
 
-<pre><code> https://api.open.jituancaiyun.com/openapi/user/add?accessToken=ACCESSTOKEN
+<pre><code> https://api.open.jituancaiyun.com/openapi/user/create?accessToken=ACCESSTOKEN
 </code></pre>
 
 <ul>
@@ -1363,7 +1241,7 @@
 {
     "deptId": 1,
     "mobile":"18806886887",
-    "uid":"12",
+    "id":"12",
     "title":"销售小弟",
     "name":"旻浩1"
 }
@@ -1393,7 +1271,7 @@
 <td>成员名字(长度限制为1~64个字符)</td>
 </tr>
 <tr>
-<td>uid</td>
+<td>id</td>
 <td>是</td>
 <td>成员uid</td>
 </tr>
