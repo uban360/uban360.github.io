@@ -16,11 +16,12 @@
 title: 优办开放平台开发者文档
 email: chenyh@shinemo.com
 description: > # this means to ignore newlines until "baseurl:"
-  优办开放平台开发者文档，通过此文档可以方便的接入优办各个产品。
+  优办开放平台开发者文档，通过此文档可以方便的接入优办各个产品
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.shinemo.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
+author: 杭州讯盟科技有限公司
 
 # Build settings
 markdown: kramdown
