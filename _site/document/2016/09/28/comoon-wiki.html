@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>接口通用描述</title>
+
+	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
+	<link rel="icon" href="/styles/images/favicon.jpg">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="canonical" href="/document/2016/09/28/comoon-wiki.html">
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+	
+	<meta name="description" content="">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">
+        <img src="/styles/images/logo.jpg">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <!-- <li>
+          <a href="/">Home</a>
+        </li> -->
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li> -->
+        <li>
+          <a href="/tag">首页</a>
+        </li>
+        <li>
+          <a href="#">关于我们</a>
+        </li> 
+      </ul>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="/donate/"><strong>打赏</strong></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" target="_blank" href="">Github</a></li>
+            <li><a rel="nofollow" target="_blank" href="">关于作者</a></li>
+            <li><a rel="nofollow" href="/books">我的书单</a></li>
+            <li><a rel="nofollow" href="/reference">推荐博客</a></li>
+            <li><a href="/feed.xml">RSS订阅</a></li>
+            <li class="divider"></li>
+            <li><a rel="nofollow" target="_blank" href="https://github.com/luoyan35714/LessOrMore.git">本项目</a></li>
+          </ul>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	<p>优办开放平台开发者文档，通过此文档可以方便的接入优办各个产品
+</p>
+  	<!-- 
+  		
+		    <h1></h1>
+     -->
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#document-ref">document</a>	/
+    	<a href="/tag/#服务端开发文档-ref">服务端开发文档</a>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+<!--
+    
+      
+      
+      
+      
+
+      
+        <li><a href="#year_2016">2016</a>
+          <ul class="nav">
+            <li><a href="#month_2016_September">September</a></li>
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+              <li><a href="#month_2016_August">August</a></li>
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+              <li><a href="#month_2016_April">April</a></li>
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            </ul>
+          </li>
+      
+    
+-->
+  </ul>
+</div> 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">接口通用描述</h1>
+              <!--
+                <p class="post-meta">Sep 28, 2016</p>
+              -->
+              <div class="meta">Posted on <span class="postdate">Sep 28, 2016</span> By <a target="_blank" href="http://www.shinemo.com">杭州讯盟科技有限公司</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">1.	开发者规范</a></li>
+  <li><a href="#section-1" id="markdown-toc-section-1">2.	开放平台接口权限说明</a></li>
+  <li><a href="#section-2" id="markdown-toc-section-2">3.	开放平台接口调用频率说明</a></li>
+  <li><a href="#section-3" id="markdown-toc-section-3">4.	开放平台接口返回说明</a></li>
+</ul>
+
+<h2 id="section">1.	开发者规范</h2>
+<p>开发者进行开放平台开发时，除了要满足接口的规范限制和接口调用频率限制外，还需特别注意用户敏感信息的使用规范。
+涉及用户数据时：</p>
+<ul>
+  <li>您收集用户的数据后，必须采取必要的保护措施，防止用户数据被盗、泄漏等。</li>
+  <li>如果我们认为您收集、使用用户数据的方式，可能损害用户体验，我们有权要求您删除相关数据并不得再以该方式收集、使用用户数据。</li>
+  <li>一旦您停止使用本服务，或 基于任何原因终止您使用本服务，您必须立即删除全部因使用本服务而获得的数据（包括各种备份）， 且不得再以任何方式进行使用。</li>
+</ul>
+
+<h2 id="section-1">2.	开放平台接口权限说明</h2>
+<p>不同类型的开放平台账号具有不同的接口权限，见下表</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>接口名称</th>
+      <th>未认证开放平台账号</th>
+      <th>认证开放平台账号</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>获取accessToken</td>
+      <td>有</td>
+      <td>有</td>
+    </tr>
+    <tr>
+      <td>获取用户基本信息</td>
+      <td>无</td>
+      <td>有</td>
+    </tr>
+    <tr>
+      <td>获取部门列表</td>
+      <td>无</td>
+      <td>有</td>
+    </tr>
+    <tr>
+      <td>获取部门员工列表</td>
+      <td>无</td>
+      <td>有</td>
+    </tr>
+    <tr>
+      <td>获取部门员工详情</td>
+      <td>无</td>
+      <td>有</td>
+    </tr>
+    <tr>
+      <td>发送聊天消息</td>
+      <td>无</td>
+      <td>有</td>
+    </tr>
+    <tr>
+      <td>其他接口完善中</td>
+      <td>…</td>
+      <td>…</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="section-2">3.	开放平台接口调用频率说明</h2>
+<ul>
+  <li>开放平台的调用接口并不是无限制的。为了防止公众号的程序错误而引发 服务器负载异常，默认情况下，每个开发者应用调用接口都不能超过一定限制，当超过一定限制时，调用对应接口会收到如下错误返回码</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">
+</span><span class="p">{</span><span class="nt">"status"</span><span class="p">:</span><span class="mi">4006</span><span class="p">,</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"接口调用频率超过限制"</span><span class="p">}</span><span class="w"> 
+
+</span></code></pre>
+</div>
+
+<ul>
+  <li>认证账号的调用量清零。针对认证的开发者账号，每月提供10次清零操作机会，可以针对同一接口，也可以针对不同接口清零。新注册账号接口调用频率见下表</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>接口名称</th>
+      <th>每日限额</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>获取accessToken</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <td>获取用户基本信息</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <td>获取部门列表</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <td>获取部门员工列表</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <td>获取部门员工详情</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <td>发送聊天消息</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <td>其他接口完善中</td>
+      <td>…</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="section-3">4.	开放平台接口返回说明</h2>
+<p>应用每次调用接口时，可能获得正确或错误的返回码，开发者可以根据返回码信息调试接口，排查错误。见下表</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>返回码</th>
+      <th>说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>调用成功</td>
+    </tr>
+    <tr>
+      <td>-1</td>
+      <td>开放平台系统错误</td>
+    </tr>
+    <tr>
+      <td>4000</td>
+      <td>用户登录token错误</td>
+    </tr>
+    <tr>
+      <td>4001</td>
+      <td>用户登录token和accessToken错误，重新获取</td>
+    </tr>
+    <tr>
+      <td>4002</td>
+      <td>accessToken错误</td>
+    </tr>
+    <tr>
+      <td>4003</td>
+      <td>AccessToken超时</td>
+    </tr>
+    <tr>
+      <td>4004</td>
+      <td>AccessToken刷新过于频繁，注意每天的接口调用次数</td>
+    </tr>
+    <tr>
+      <td>4005</td>
+      <td>accessToken错误，一般是系统原因，重新获取或者联系客服</td>
+    </tr>
+    <tr>
+      <td>4006</td>
+      <td>接口调用频率超过限制</td>
+    </tr>
+    <tr>
+      <td>4007</td>
+      <td>获取accessToken时appId或者appSecret错误</td>
+    </tr>
+    <tr>
+      <td>4008</td>
+      <td>缺少accessToken参数</td>
+    </tr>
+    <tr>
+      <td>4009</td>
+      <td>需要get请求</td>
+    </tr>
+    <tr>
+      <td>4010</td>
+      <td>需要post请求</td>
+    </tr>
+    <tr>
+      <td>4011</td>
+      <td>需要httpss请求</td>
+    </tr>
+    <tr>
+      <td>4012</td>
+      <td>Post数据包为空</td>
+    </tr>
+    <tr>
+      <td>4013</td>
+      <td>Api无权限</td>
+    </tr>
+    <tr>
+      <td>4014</td>
+      <td>调用来源ip不在ip白名单</td>
+    </tr>
+    <tr>
+      <td>4015</td>
+      <td>不合法的callback url</td>
+    </tr>
+    <tr>
+      <td>4016</td>
+      <td>企业未对该应用授权</td>
+    </tr>
+    <tr>
+      <td>4500</td>
+      <td>用户uid不存在或者错误</td>
+    </tr>
+    <tr>
+      <td>4501</td>
+      <td>缺少uid参数</td>
+    </tr>
+  </tbody>
+</table>
+
+            </article>
+        </div>
+      </div>
+      <div class="panel docs-content">
+        <article class="post-content">
+          <div class="wrapper">
+             
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2014-2016 <a href=""><code>杭州讯盟科技有限公司</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, theme from <a href="http://lesscss.cn/">Less</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/application.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+
+  </body>
+</html>

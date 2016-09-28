@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>应用接入-消息</title>
+
+	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
+	<link rel="icon" href="/styles/images/favicon.jpg">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="canonical" href="/document/2016/08/27/app-push.html">
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+	
+	<meta name="description" content="">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">
+        <img src="/styles/images/logo.jpg">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <!-- <li>
+          <a href="/">Home</a>
+        </li> -->
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li> -->
+        <li>
+          <a href="/tag">首页</a>
+        </li>
+        <li>
+          <a href="#">关于我们</a>
+        </li> 
+      </ul>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="/donate/"><strong>打赏</strong></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" target="_blank" href="">Github</a></li>
+            <li><a rel="nofollow" target="_blank" href="">关于作者</a></li>
+            <li><a rel="nofollow" href="/books">我的书单</a></li>
+            <li><a rel="nofollow" href="/reference">推荐博客</a></li>
+            <li><a href="/feed.xml">RSS订阅</a></li>
+            <li class="divider"></li>
+            <li><a rel="nofollow" target="_blank" href="https://github.com/luoyan35714/LessOrMore.git">本项目</a></li>
+          </ul>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	<p>优办开放平台开发者文档，通过此文档可以方便的接入优办各个产品
+</p>
+  	<!-- 
+  		
+		    <h1></h1>
+     -->
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#document-ref">document</a>	/
+    	<a href="/tag/#服务端开发文档-ref">服务端开发文档</a>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+<!--
+    
+      
+      
+      
+      
+
+      
+        <li><a href="#year_2016">2016</a>
+          <ul class="nav">
+            <li><a href="#month_2016_September">September</a></li>
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+              <li><a href="#month_2016_August">August</a></li>
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+              <li><a href="#month_2016_April">April</a></li>
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            </ul>
+          </li>
+      
+    
+-->
+  </ul>
+</div> 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">应用接入-消息</h1>
+              <!--
+                <p class="post-meta">Aug 27, 2016</p>
+              -->
+              <div class="meta">Posted on <span class="postdate">Aug 27, 2016</span> By <a target="_blank" href="http://www.shinemo.com">杭州讯盟科技有限公司</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#section" id="markdown-toc-section">1.	推送消息</a>    <ul>
+      <li><a href="#link" id="markdown-toc-link">1.1	简单Link消息</a></li>
+      <li><a href="#section-1" id="markdown-toc-section-1">1.2	图文消息(敬请期待)</a></li>
+      <li><a href="#section-2" id="markdown-toc-section-2">1.3	文本消息</a></li>
+      <li><a href="#section-3" id="markdown-toc-section-3">1.4	图片消息(敬请期待)</a></li>
+      <li><a href="#section-4" id="markdown-toc-section-4">1.5	语音消息(敬请期待)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="section">1.	推送消息</h2>
+
+<ul>
+  <li>https请求方式: POST</li>
+</ul>
+
+<p><code class="highlighter-rouge"> https://api.open.jituancaiyun.com/openapi/message/common/send?accessToken=ACCESSTOKEN </code></p>
+
+<ul>
+  <li>消息类型：</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>消息类型</th>
+      <th>描述</th>
+      <th>type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>简单Link消息</td>
+      <td>带有消息头，消息描述和跳转链接</td>
+      <td>msg_link</td>
+    </tr>
+    <tr>
+      <td>图文消息</td>
+      <td>富文本消息（可在允许范围自定义）(敬请期待)</td>
+      <td>msg_box</td>
+    </tr>
+    <tr>
+      <td>文本消息</td>
+      <td>简单文本</td>
+      <td>msg_text</td>
+    </tr>
+    <tr>
+      <td>图片消息</td>
+      <td>简单图片消息(不能自定义)(敬请期待)</td>
+      <td>msg_pic</td>
+    </tr>
+    <tr>
+      <td>语音消息</td>
+      <td>简单语音消息(不能自定义)(敬请期待)</td>
+      <td>msg_voice</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>接口返回demo：</li>
+</ul>
+
+<p><code class="highlighter-rouge"><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"0(开放平台处理成功)"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"success"</span><span class="p">:</span><span class="s2">"false(只要有一个失败，我就是false)"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"invaliduser"</span><span class="p">:</span><span class="w"> </span><span class="s2">"我是发送失败的uid，多个使用半角|分开"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"invaliddept"</span><span class="p">:</span><span class="w"> </span><span class="s2">"我是发送失败的部门id，多个使用半角|分开"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"我是失败原因"</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span></code></p>
+
+<h3 id="link">1.1	简单Link消息</h3>
+
+<ul>
+  <li>请求DEMO</li>
+</ul>
+
+<p><code class="highlighter-rouge"><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"touser"</span><span class="p">:</span><span class="s2">"我是消息接收者的uid"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"todept"</span><span class="p">:</span><span class="s2">"我是接受者部门id"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"msgtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"msg_link"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"link"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"targetUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"我是消息中点击跳转的地址（eg:https://www.taobao.com)"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"title"</span><span class="p">:</span><span class="s2">"我是消息header(长度20个字符，超过20个字符被隐藏)"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"desc"</span><span class="p">:</span><span class="s2">"我是消息body(长度50个字符，超过50个字符被隐藏,支持换行符)"</span><span class="p">,</span><span class="w">
+       </span><span class="err">}</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span></code></p>
+
+<ul>
+  <li>参数说明</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>描述</th>
+      <th>是否必须</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>touser</td>
+      <td>接收消息的人员列表(多个使用半角</td>
+      <td>分开)(与todept职能存在一个)</td>
+      <td>是</td>
+    </tr>
+    <tr>
+      <td>todept</td>
+      <td>接收消息的部门列表(多个使用半角</td>
+      <td>分开)(与touser职能存在一个)</td>
+      <td>是</td>
+    </tr>
+    <tr>
+      <td>msgtype</td>
+      <td>消息类型，link消息固定为msg_link</td>
+      <td>是</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>targetUrl</td>
+      <td>点击跳转的地址</td>
+      <td>是</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>消息标题</td>
+      <td>是</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>desc</td>
+      <td>消息描述</td>
+      <td>是</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="section-1">1.2	图文消息(敬请期待)</h3>
+
+<h3 id="section-2">1.3	文本消息</h3>
+
+<ul>
+  <li>请求DEMO</li>
+</ul>
+
+<p><code class="highlighter-rouge"><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"touser"</span><span class="p">:</span><span class="s2">"我是消息接收者的uid"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"todept"</span><span class="p">:</span><span class="s2">"我是接受者部门id"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"msgtype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"msg_text"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"text"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"title"</span><span class="p">:</span><span class="s2">"我是消息header(长度20个字符，超过20个字符被隐藏)"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"desc"</span><span class="p">:</span><span class="s2">"我是消息body(长度50个字符，超过50个字符被隐藏,支持换行符)"</span><span class="p">,</span><span class="w">
+       </span><span class="err">}</span><span class="w">
+    </span><span class="p">}</span><span class="w"> </span></code></p>
+
+<ul>
+  <li>参数说明</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>描述</th>
+      <th>是否必须</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>touser</td>
+      <td>接收消息的人员列表(多个使用半角</td>
+      <td>分开)(与todept职能存在一个)</td>
+      <td>是</td>
+    </tr>
+    <tr>
+      <td>todept</td>
+      <td>接收消息的部门列表(多个使用半角</td>
+      <td>分开)(与touser职能存在一个)</td>
+      <td>是</td>
+    </tr>
+    <tr>
+      <td>msgtype</td>
+      <td>msg_text</td>
+      <td>是</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>消息标题</td>
+      <td>是</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>desc</td>
+      <td>消息描述</td>
+      <td>是</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="section-3">1.4	图片消息(敬请期待)</h3>
+
+<h3 id="section-4">1.5	语音消息(敬请期待)</h3>
+
+            </article>
+        </div>
+      </div>
+      <div class="panel docs-content">
+        <article class="post-content">
+          <div class="wrapper">
+             
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2014-2016 <a href=""><code>杭州讯盟科技有限公司</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, theme from <a href="http://lesscss.cn/">Less</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/application.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+
+  </body>
+</html>

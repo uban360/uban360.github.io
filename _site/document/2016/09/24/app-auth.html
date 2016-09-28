@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>应用接入-免登授权</title>
+
+	<link rel="shortcut icon" href="/styles/images/favicon.jpg">
+	<link rel="icon" href="/styles/images/favicon.jpg">
+
+	<link rel="stylesheet" href="/styles/css/index.css">
+	<link rel="stylesheet" href="/styles/css/fontawesome/css/font-awesome.min.css">
+	<link rel="canonical" href="/document/2016/09/24/app-auth.html">
+	<link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+	
+	<meta name="description" content="">
+
+	<script src="/styles/js/jquery.min.js"></script>
+	<!--[if lt IE 9]>
+    	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  	<![endif]-->
+  	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?94be4b0f9fc5d94cc0d0415ea6761ae9";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+  	<style type="text/css">
+	  	.docs-content{
+	  		margin-bottom: 10px;
+	  	}
+  	</style>
+</head>
+
+  <body class="index">
+
+    <header class="navbar navbar-inverse navbar-fixed-top docs-nav" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="#" class="navbar-brand">
+        <img src="/styles/images/logo.jpg">
+      </a>
+    </div>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">    
+        <!-- <li>
+          <a href="/">Home</a>
+        </li> -->
+        <!-- <li>
+          <a href="/categories/">大类分解</a>
+        </li> -->
+        <li>
+          <a href="/tag">首页</a>
+        </li>
+        <li>
+          <a href="#">关于我们</a>
+        </li> 
+      </ul>
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="/donate/"><strong>打赏</strong></a>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">关于<b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a rel="nofollow" target="_blank" href="">Github</a></li>
+            <li><a rel="nofollow" target="_blank" href="">关于作者</a></li>
+            <li><a rel="nofollow" href="/books">我的书单</a></li>
+            <li><a rel="nofollow" href="/reference">推荐博客</a></li>
+            <li><a href="/feed.xml">RSS订阅</a></li>
+            <li class="divider"></li>
+            <li><a rel="nofollow" target="_blank" href="https://github.com/luoyan35714/LessOrMore.git">本项目</a></li>
+          </ul>
+        </li>
+      </ul> -->
+    </nav>
+  </div>
+</header>
+    <div class="docs-header" id="content">
+  <div class="container">
+  	<p>优办开放平台开发者文档，通过此文档可以方便的接入优办各个产品
+</p>
+  	<!-- 
+  		
+		    <h1></h1>
+     -->
+  </div>
+</div>
+    
+      
+<div class="banner">
+  <div class="container">
+  	
+    	<a href="/categories/#document-ref">document</a>	/
+    	<a href="/tag/#服务端开发文档-ref">服务端开发文档</a>
+    
+  </div>
+</div>
+
+    
+
+    <div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+  <h1>目录</h1>
+  <ul class="nav sidenav">
+<!--
+    
+      
+      
+      
+      
+
+      
+        <li><a href="#year_2016">2016</a>
+          <ul class="nav">
+            <li><a href="#month_2016_September">September</a></li>
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+              <li><a href="#month_2016_August">August</a></li>
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+              <li><a href="#month_2016_April">April</a></li>
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            
+          
+        
+      
+    
+      
+      
+      
+      
+
+      
+
+      
+            </ul>
+          </li>
+      
+    
+-->
+  </ul>
+</div> 
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+            <header class="post-header">
+              <h1 class="post-title">应用接入-免登授权</h1>
+              <!--
+                <p class="post-meta">Sep 24, 2016</p>
+              -->
+              <div class="meta">Posted on <span class="postdate">Sep 24, 2016</span> By <a target="_blank" href="http://www.shinemo.com">杭州讯盟科技有限公司</a></div>
+              <br />
+            </header>
+            <article class="post-content">
+              <ul id="markdown-toc">
+  <li><a href="#token" id="markdown-toc-token">1.	通过token免登授权</a></li>
+</ul>
+
+<h2 id="token">1.	通过token免登授权</h2>
+
+<blockquote>
+  <p>应用在客户端-我的应用中成功订阅以后， 在点击该应用时，客户端会把token以post形式传给开发者（token=***）</p>
+</blockquote>
+
+<ul>
+  <li>https请求方式: GET</li>
+</ul>
+
+<p><code class="highlighter-rouge"> https://api.open.jituancaiyun.com/openapi/auth/getUserInfoByToken?token=TOKEN&amp;accessToken=ACCESSTOKEN</code></p>
+
+<ul>
+  <li>参数说明：</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>是否必须</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>token</td>
+      <td>是</td>
+      <td>客户端拼接上的token</td>
+    </tr>
+    <tr>
+      <td>accessToken</td>
+      <td>是</td>
+      <td>接口访问凭据</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>返回说明：
+正常情况下开放平台会返回下述JSON数据包给用户</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="w">
+</span><span class="p">{</span><span class="nt">"status"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="nt">"data"</span><span class="p">:{</span><span class="nt">"uid"</span><span class="p">:</span><span class="s2">"REAM123"</span><span class="p">,</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"张三"</span><span class="p">,</span><span class="w"> </span><span class="nt">"orgList"</span><span class="p">:[{</span><span class="nt">"orgName"</span><span class="p">:</span><span class="s2">"杭州讯盟科技"</span><span class="p">,</span><span class="err">orgId</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="nt">"orgName"</span><span class="p">:</span><span class="s2">"芒果医生"</span><span class="p">,</span><span class="err">orgId</span><span class="p">:</span><span class="mi">2</span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="nt">"orgName"</span><span class="p">:</span><span class="s2">"阿里巴巴"</span><span class="p">,</span><span class="err">orgId</span><span class="p">:</span><span class="mi">3</span><span class="p">}</span><span class="err">...</span><span class="p">]}}</span><span class="w">
+
+</span></code></pre>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>参数</th>
+      <th>描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>status</td>
+      <td>开放平台处理状态</td>
+    </tr>
+    <tr>
+      <td>data</td>
+      <td>处理成功后会把数据字段放到这里</td>
+    </tr>
+    <tr>
+      <td>uid</td>
+      <td>用户在开放平台的id（经过加密），后续获取用户信息需要通过此uid</td>
+    </tr>
+    <tr>
+      <td>orgList</td>
+      <td>用户所在机构列表</td>
+    </tr>
+    <tr>
+      <td>orgName</td>
+      <td>用户所在机构名字</td>
+    </tr>
+    <tr>
+      <td>orgId</td>
+      <td>用户所在机构id</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="nt">"status"</span><span class="p">:</span><span class="mi">4003</span><span class="p">,</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"accessToken超时，请重新获取"</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+</div>
+
+            </article>
+        </div>
+      </div>
+      <div class="panel docs-content">
+        <article class="post-content">
+          <div class="wrapper">
+             
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+    <footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="copyright">Copyright &copy; 2014-2016 <a href=""><code>杭州讯盟科技有限公司</code></a>.</p>
+		<p>Powered by <a href="http://jekyllrb.com">Jekyll</a>, theme from <a href="http://lesscss.cn/">Less</a></p>
+	</div>
+</footer>
+
+<script src="/styles/js/jquery.min.js"></script>
+<script src="/styles/js/bootstrap.min.js"></script>
+<script src="/styles/js/holder.min.js"></script>
+<script src="/styles/js/application.js"></script>
+<script src="/styles/js/lessismore.js"></script>
+
+  </body>
+</html>
