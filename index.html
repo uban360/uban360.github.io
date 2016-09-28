@@ -871,7 +871,7 @@
 <li>POST消息体</li>
 </ul>
 
-<pre><code>{"name":"芒果医生", "parentid":"0", "id":"23004", "oldParentid":"0"}
+<pre><code>{"name":"芒果医生", "parentid":"0", "id":"23004"}
 </code></pre>
 
 <ul>
@@ -901,11 +901,6 @@
 <td>parentid</td>
 <td>是</td>
 <td>父部门id(根部门为0)</td>
-</tr>
-<tr>
-<td>oldParentid</td>
-<td>是</td>
-<td>原来的部门id</td>
 </tr>
 <tr>
 <td>id</td>
@@ -1240,6 +1235,7 @@
 <pre><code>
 {
     "deptId": 1,
+    "oldDeptId" : 1,
     "mobile":"18806886887",
     "id":"12",
     "title":"销售小弟",
@@ -1289,6 +1285,11 @@
 <td>title</td>
 <td>是</td>
 <td>人员职务(长度限制为1~64个字符)</td>
+</tr>
+<tr>
+<td>oldDeptId</td>
+<td>是</td>
+<td>原来的部门id</td>
 </tr>
 </tbody>
 </table>
