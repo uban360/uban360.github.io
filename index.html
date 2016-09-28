@@ -1,23 +1,45 @@
 ---
 layout: default
+title: 优办开放平台开发者文档
+header: Posts By Tag
 ---
 
-<div class="home">
+<div class="container docs-container">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="sidebar hidden-print" role="complementary">
+        <div id="navigation">
+        	<h1>目录</h1>
+      		<ul class="nav sidenav">
+			  	{% if site.tags.first[0] == null %}
+				  	{% for tag in site.tags %} 
+				  	<li><a href="{{ site.JB.tags_path }}#{{ tag }}-ref">{{ tag }} <span >({{ site.tags[tag].size }})</span></a></li>
+				  	{% endfor %}
+				{% else %}
+				  	{% for tag in site.tags %} 
+				  	<li><a href="{{ site.JB.tags_path }}#{{ tag[0] }}-ref">{{ tag[0] }} <span style="color: #999999;" >({{ tag[1].size }})</span></a></li>
+				  	{% endfor %}
+				{% endif %}
+          	</ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9" role="main">
+      <div class="panel docs-content">
+        <div class="wrapper">
+          <div class="home">
 
-  <h1 class="page-heading">欢迎来到优办开发者平台</h1>
+          	{% for tag in site.tags %} 
+			  <h2 id="{{ tag[0] }}-ref">{{ tag[0] }}</h2>
+			  <ul>
+			    {% assign pages_list = tag[1] %}  
+			    {% include LessOrMore/pages_list %}
+			  </ul>
+			{% endfor %}
 
-  <!-- <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
- -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
