@@ -16,7 +16,7 @@
 title: 讯盟开放平台开发者文档
 email: chenyh@shinemo.com
 description: > # this means to ignore newlines until "baseurl:"
-  讯盟开放平台开发者文档，通过此文档可以方便的接入优办各个产品
+  讯盟开放平台开发者文档，通过此文档可以方便的接入讯盟旗下各个产品
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.shinemo.com" # the base hostname & protocol for your site
 twitter_username: jekyllrb
