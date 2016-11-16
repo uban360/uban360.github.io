@@ -283,7 +283,7 @@ meetingInviteId | 是 | 会议邀请id
 				"uid" : "", 
 				"name" : "",
 				"msgStatus" : "",
-				"isRemind" : ""
+				"remind" : ""
 			}...
 			]
 		}
@@ -311,7 +311,7 @@ members | 参加会议人员
 uid | 参会人员uid
 name | 参会人员name
 msgStatus | 会议消息状态：0-未读, 1-已读未操作, 2-确定, 3-拒绝
-isRemind | true:允许消息提醒；false:不允许消息提醒
+remind | true:允许消息提醒；false:不允许消息提醒
 
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
