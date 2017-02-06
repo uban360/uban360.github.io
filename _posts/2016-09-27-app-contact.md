@@ -41,6 +41,7 @@ departments | 部门列表数据
 id | 部门id
 name | 部门名称
 parentid | 父部门id(根部门为0)
+sequence | 部门排序
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
 
