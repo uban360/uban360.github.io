@@ -401,6 +401,7 @@ uid | 是 | 人员id
             "sequence":"我的顺序",
             "adminRole":"管理员角色"
         }
+}
 
 ```
 
