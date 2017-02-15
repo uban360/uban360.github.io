@@ -327,7 +327,7 @@ data | 处理成功后会把数据字段放到这里
 
 ```
 
-## 4.	删除人员
+## 8.	删除人员
 
 * https请求方式: POST
 
@@ -360,6 +360,60 @@ id | 是 | 人员id
 ------------ | -------------
 status | 开放平台处理状态
 data | 处理成功后会把数据字段放到这里
+
+错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
+
+```
+{"status":4003,"message":"accessToken超时，请重新获取"}
+
+```
+
+## 9.   获取人员详细
+
+* https请求方式: GET
+
+
+` https://api.open.jituancaiyun.com/openapi/user/detail?accessToken=ACCESSTOKEN&deptId=DEPTID&uid=UID `
+
+
+* 参数说明：
+
+参数 | 是否必须 | 描述
+------------ | ------------- | -------------
+token | 是 |  客户端拼接上的token
+deptId | 是 | 部门id
+uid | 是 | 人员id
+
+* 返回说明：
+正常情况下开放平台会返回下述JSON数据包给用户
+
+
+```
+
+{
+    "status":0,
+    "data":
+        {
+            "id":123, 
+            "name":"张三", 
+            "mobile":"18268080277", 
+            "title":"我的职位", 
+            "sequence":"我的顺序",
+            "adminRole":"管理员角色"
+        }
+
+```
+
+参数 | 描述
+------------ | -------------
+status | 开放平台处理状态
+data | 处理成功后会把数据字段放到这里
+id | 用户id
+name | 名字
+title | 职位
+mobile | 手机号
+sequence | 该人在该部门下的排序
+adminRole | 管理员角色(1:超级管理员，2:企业管理员，0:普通员工，无角色)
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
 
