@@ -18,7 +18,8 @@ tag: 服务端开发文档
 
 * POST消息体：
 
-```javascript {
+```javascript 
+{
 	"requesterUid" : "",
 	"requesterName" : "",
 	"detail" : {
