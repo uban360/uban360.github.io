@@ -18,7 +18,7 @@ tag: 服务端开发文档
 
 * POST消息体：
 
-` {
+```javascript {
 	"requesterUid" : "",
 	"requesterName" : "",
 	"detail" : {
@@ -33,10 +33,11 @@ tag: 服务端开发文档
 		{ 
 			"uid" : "",
 			"name" : ""
-		}...
+		}
 		]
 	}
-} `
+} 
+```
 
 * 参数说明：
 
@@ -60,10 +61,13 @@ name | 是 |  参会人员name
 正常情况下开放平台会返回下述JSON数据包给用户
 
 
-```
-
-{"status":0,"data":{"meetingInviteId":111234}}
-
+```javascript
+{
+	"status":0,
+	"data":{
+		"meetingInviteId":111234
+	}
+}
 ```
 
 参数 | 描述
@@ -75,9 +79,11 @@ meetingInviteId | 会议邀请id
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
 
-```
-{"status":4003,"message":"accessToken超时，请重新获取"}
-
+```javascript
+{
+	"status":4003,
+	"message":"accessToken超时，请重新获取"
+}
 ```
 
 ## 2.	取消会议邀请(仅限会议创建者调用)
@@ -89,10 +95,12 @@ meetingInviteId | 会议邀请id
 
 * POST消息体：
 
-` {
+```javascript 
+{
 	"requesterUid" : "",
 	"meetingInviteId" : ""
-} `
+} 
+```
 
 * 参数说明：
 
@@ -105,10 +113,10 @@ meetingInviteId | 是 | 会议邀请id
 正常情况下开放平台会返回下述JSON数据包给用户
 
 
-```
-
-{"status":0}
-
+```javascript
+{
+	"status":0
+}
 ```
 
 参数 | 描述
@@ -119,9 +127,11 @@ data | 处理成功后会把数据字段放到这里
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
 
-```
-{"status":4003,"message":"accessToken超时，请重新获取"}
-
+```javascript
+{
+	"status":4003,
+	"message":"accessToken超时，请重新获取"
+}
 ```
 
 ## 3.	删除会议邀请(将会议标签从工作台移除)
@@ -133,10 +143,12 @@ data | 处理成功后会把数据字段放到这里
 
 * POST消息体：
 
-` {
+```javascript 
+{
 	"requesterUid" : "",
 	"meetingInviteId" : ""
-} `
+} 
+```
 
 * 参数说明：
 
@@ -149,10 +161,10 @@ meetingInviteId | 是 | 会议邀请id
 正常情况下开放平台会返回下述JSON数据包给用户
 
 
-```
-
-{"status":0}
-
+```javascript
+{
+	"status":0
+}
 ```
 
 参数 | 描述
@@ -163,9 +175,11 @@ data | 处理成功后会把数据字段放到这里
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
 
-```
-{"status":4003,"message":"accessToken超时，请重新获取"}
-
+```javascript
+{
+	"status":4003,
+	"message":"accessToken超时，请重新获取"
+}
 ```
 
 ## 4.	更新会议邀请详情(仅限会议创建者调用)
@@ -177,7 +191,8 @@ data | 处理成功后会把数据字段放到这里
 
 * POST消息体：
 
-`{
+```javascript
+{
 	"requesterUid" : "",
 	"meetingInviteId" : "",
 	"detail" : {
@@ -192,10 +207,11 @@ data | 处理成功后会把数据字段放到这里
 		{ 
 			"uid" : "", 
 			"name" : "" 
-		}...
+		}
 		]
 	}
-}`
+}
+```
 
 * 参数说明：
 
@@ -219,10 +235,10 @@ name | 是 |  参会人员name
 正常情况下开放平台会返回下述JSON数据包给用户
 
 
-```
-
-{"status":0}
-
+```javascript
+{
+	"status":0
+}
 ```
 
 参数 | 描述
@@ -233,9 +249,11 @@ data | 处理成功后会把数据字段放到这里
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
 
-```
-{"status":4003,"message":"accessToken超时，请重新获取"}
-
+```javascript
+{
+	"status":4003,
+	"message":"accessToken超时，请重新获取"
+}
 ```
 
 ## 5.	获取会议邀请详情
@@ -247,10 +265,12 @@ data | 处理成功后会把数据字段放到这里
 
 * POST消息体：
 
-` {
+```javascript 
+{
 	"requesterUid" : "",
 	"meetingInviteId" : ""
-} `
+} 
+```
 
 * 参数说明：
 
@@ -262,8 +282,7 @@ meetingInviteId | 是 | 会议邀请id
 * 返回说明：
 正常情况下开放平台会返回下述JSON数据包给用户
 
-```
-
+```javascript
 {
 	"status":0,
 	"data":{
@@ -284,12 +303,11 @@ meetingInviteId | 是 | 会议邀请id
 				"name" : "",
 				"msgStatus" : "",
 				"remind" : ""
-			}...
+			}
 			]
 		}
 	}
 }
-
 ```
 
 参数 | 描述
@@ -316,7 +334,9 @@ remind | true:允许消息提醒；false:不允许消息提醒
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
 
-```
-{"status":4003,"message":"accessToken超时，请重新获取"}
-
+```javascript
+{
+	"status":4003,
+	"message":"accessToken超时，请重新获取"
+}
 ```

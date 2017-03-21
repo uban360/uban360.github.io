@@ -19,7 +19,8 @@ tag: 服务端开发文档
 
 * POST消息体：
 
-` {
+```javascript
+{
 	"requesterUid" : "",
 	"requesterName" : "",
 	"detail" : {
@@ -30,10 +31,11 @@ tag: 服务端开发文档
 		"members" : [{
 			"uid" : "", 
 			"name" : ""
-		}...
+		}
 		]	
 	}
-}`
+}
+```
 
 * 参数说明：
 
@@ -44,7 +46,7 @@ requesterName | 是 | 请求者name
 detail | 是 |  团队提醒详细信息
 createTime | 是 |  团队提醒创建时间戳
 content | 是 |  团队提醒内容
-remindTime | 是 |  提醒时间
+remindTime | 是 |  提醒时间（时间戳）
 remindType | 是 |  提醒类型 0:应用内, 1:sms
 members | 是 |  提醒人员信息
 uid | 是 |  提醒人员uid
@@ -54,10 +56,13 @@ name | 是 |  提醒人员name
 正常情况下开放平台会返回下述JSON数据包给用户
 
 
-```
-
-{"status":0,"data":{"teamRemindId":111234}}
-
+```javascript
+{
+	"status":0,
+	"data":{
+		"teamRemindId":111234
+	}
+}
 ```
 
 参数 | 描述
@@ -69,9 +74,11 @@ teamRemindId | 团队提醒id
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
 
-```
-{"status":4003,"message":"accessToken超时，请重新获取"}
-
+```javascript
+{
+	"status":4003,
+	"message":"accessToken超时，请重新获取"
+}
 ```
 
 ## 2.	取消团队消息提醒(仅限提醒创建者调用)
@@ -84,10 +91,12 @@ teamRemindId | 团队提醒id
 
 * POST消息体：
 
-` {
+``` javascript
+{
 	"requesterUid" : "",
 	"teamRemindId" : ""
-} `
+} 
+```
 
 * 参数说明：
 
@@ -100,10 +109,10 @@ teamRemindId | 是 | 团队提醒id
 正常情况下开放平台会返回下述JSON数据包给用户
 
 
-```
-
-{"status":0}
-
+```javascript
+{
+	"status":0
+}
 ```
 
 参数 | 描述
@@ -114,9 +123,11 @@ data | 处理成功后会把数据字段放到这里
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
 
-```
-{"status":4003,"message":"accessToken超时，请重新获取"}
-
+```javascript
+{
+	"status":4003,
+	"message":"accessToken超时，请重新获取"
+}
 ```
 
 ## 3.	删除团队消息提醒(将提醒标签从工作台移除)
@@ -128,10 +139,12 @@ data | 处理成功后会把数据字段放到这里
 
 * POST消息体：
 
-` {
+```javascript 
+{
 	"requesterUid" : "",
 	"teamRemindId" : ""
-} `
+} 
+```
 
 * 参数说明：
 
@@ -144,10 +157,10 @@ teamRemindId | 是 | 团队提醒id
 正常情况下开放平台会返回下述JSON数据包给用户
 
 
-```
-
-{"status":0}
-
+```javascript
+{
+	"status":0
+}
 ```
 
 参数 | 描述
@@ -158,9 +171,11 @@ data | 处理成功后会把数据字段放到这里
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
 
-```
-{"status":4003,"message":"accessToken超时，请重新获取"}
-
+```javascript
+{
+	"status":4003,
+	"message":"accessToken超时，请重新获取"
+}
 ```
 
 ## 4.	更新团队消息提醒(仅限提醒创建者调用)
@@ -172,7 +187,8 @@ data | 处理成功后会把数据字段放到这里
 
 * POST消息体：
 
-` {
+```javascript 
+{
 	"requesterUid" : "",
 	"teamRemindId" : "",
 	"detail" : {
@@ -183,10 +199,11 @@ data | 处理成功后会把数据字段放到这里
 		"members" : [{
 			"uid" : "", 
 			"name" : ""
-		}...
+		}
 		]	
 	}
-}`
+}
+```
 
 * 参数说明：
 
@@ -197,7 +214,7 @@ teamRemindId | 是 | 团队提醒id
 detail | 是 |  团队提醒详细信息
 createTime | 是 |  团队提醒创建时间戳
 content | 是 |  团队提醒内容
-remindTime | 是 |  提醒时间
+remindTime | 是 |  提醒时间（时间戳）
 remindType | 是 |  提醒类型 0:应用内, 1:sms
 members | 是 |  提醒人员信息
 uid | 是 |  提醒人员uid
@@ -207,10 +224,10 @@ name | 是 |  提醒人员name
 正常情况下开放平台会返回下述JSON数据包给用户
 
 
-```
-
-{"status":0}
-
+```javascript
+{
+	"status":0
+}
 ```
 
 参数 | 描述
@@ -221,9 +238,11 @@ data | 处理成功后会把数据字段放到这里
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
 
-```
-{"status":4003,"message":"accessToken超时，请重新获取"}
-
+```javascript
+{
+	"status":4003,
+	"message":"accessToken超时，请重新获取"
+}
 ```
 
 ## 5.	获取团队消息提醒详情
@@ -235,10 +254,12 @@ data | 处理成功后会把数据字段放到这里
 
 * POST消息体：
 
-` {
+``` javascript
+{
 	"requesterUid" : "",
 	"teamRemindId" : ""
-} `
+} 
+```
 
 
 * 参数说明：
@@ -252,8 +273,7 @@ teamRemindId | 是 | 团队提醒id
 正常情况下开放平台会返回下述JSON数据包给用户
 
 
-```
-
+```javascript
 {
 	"status":0,
 	"data":{
@@ -276,7 +296,6 @@ teamRemindId | 是 | 团队提醒id
 		}
 	}
 }
-
 ```
 
 参数 | 描述
@@ -301,6 +320,8 @@ remind | true:允许消息提醒；false:不允许消息提醒
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为accessToken超时）
 
 ```
-{"status":4003,"message":"accessToken超时，请重新获取"}
-
+{
+	"status":4003,
+	"message":"accessToken超时，请重新获取"
+}
 ```

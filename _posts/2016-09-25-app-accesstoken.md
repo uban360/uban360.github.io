@@ -36,10 +36,14 @@ appSecret | 是 | 应用注册成功后返回
 正常情况下开放平台会返回下述JSON数据包给用户
 
 
-```
-
-{"status":0,"data":{"accessToken":"MDAwMjM0M0RBNjIwMURENDAxOTJDRkE0MkVGMDlERjQ5MjVFODAzQTlFMThERDBCMzNBNzFEMjBFMkRCNjExRDgxQjM3RkU0QzM1NkMwQzM5NkNCODUyN0JFQTE1OUE5OUUzMg==","expiresIn":7200}}
-
+```javascript
+{
+	"status":0,
+	"data":{
+		"accessToken":"MDAwMjM0M0RBNjIwMURENDAxOTJDRkE0MkVGMDlERjQ5MjVFODAzQTlFMThERDBCMzNBNzFEMjBFMkRCNjExRDgxQjM3RkU0QzM1NkMwQzM5NkNCODUyN0JFQTE1OUE5OUUzMg==",
+		"expiresIn":7200
+	}
+}
 ```
 
 参数 | 描述
@@ -51,7 +55,9 @@ expiresIn | 凭证有效时间，单位：秒
 
 错误时开放平台会返回错误码等信息，JSON数据包示例如下（该示例为AppID无效错误）
 
-```
-{"status":4007,"message":"获取accessToken时appId或者appSecret错误"}
-
+```javascript
+{
+	"status":4007,
+	"message":"获取accessToken时appId或者appSecret错误"
+}
 ```
